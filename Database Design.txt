@@ -1,0 +1,24 @@
+Database Design
+
+Items that need information stored:
+Name of Share
+Share code on stock market
+Amount of shares owned
+Mon Morning Price
+Mon Evening Price
+Tue Morning Price
+Tue Evening Price
+Wed Morning Price
+Wed Evening Price
+Thu Morning Price
+Thu Evening Price
+Fri Morning Price
+Fri Evening Price
+
+3 Tables
+
+Name of Share & Share code on stockmarket(PK)
+
+Share code on stockmarket(FK) & Amount of shares owned
+
+Share code on stockmarket(FK) & Mon/Tue/Wed/Thu/Fri Morn./Eve. Details
