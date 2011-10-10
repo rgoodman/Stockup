@@ -17,8 +17,8 @@ Fri Evening Price
 
 3 Tables
 
-Name of Share & Share code on stockmarket(PK)
+Name of Share (String) & Share code on stockmarket(PK) (String)
 
-Share code on stockmarket(FK) & Amount of shares owned
+Share code on stockmarket(FK) & Amount of shares owned (int)
 
-Share code on stockmarket(FK) & Mon/Tue/Wed/Thu/Fri Morn./Eve. Details
+Share code on stockmarket(FK) & Mon/Tue/Wed/Thu/Fri Morn./Eve. Details (Floats)
