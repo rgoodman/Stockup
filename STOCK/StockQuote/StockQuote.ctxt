@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=symbol
+comment0.target=double\ price(java.lang.String)
+comment1.params=symbol
+comment1.target=java.lang.String\ name(java.lang.String)
+comment2.params=symbol
+comment2.target=java.lang.String\ date(java.lang.String)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4

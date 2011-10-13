@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:scrollbars="vertical" 
+android:layout_gravity="fill" android:layout_height="fill_parent"
+android:layout_width="fill_parent" android:paddingLeft="6dip"
+android:paddingRight="6dip">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:gravity="center_vertical"
+    >
+
+    <TextView android:layout_width="wrap_content" android:text="@string/sp" android:layout_height="wrap_content" android:id="@+id/TextView01"></TextView>
+    <TextView android:layout_width="wrap_content" android:text="@string/BP" android:layout_height="wrap_content" android:id="@+id/textView1"></TextView>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/tableRow1">
+        <TextView android:layout_width="216dp" android:text="@string/SP" android:layout_height="wrap_content" android:id="@+id/TextView09"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView05" android:text="@string/t"></TextView>
+    </TableRow>
+    <LinearLayout
+    	
+        android:id="@+id/lay"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:orientation="vertical">
+        <EditText android:textSize="16px"  android:editable="false"
+
+        android:id="@+id/textBP" android:layout_width="fill_parent"   android:layout_height="34dp">
+            
+        </EditText>
+    </LinearLayout>
+    <TextView android:layout_width="wrap_content" android:text="@string/sp" android:layout_height="wrap_content" android:id="@+id/TextView03"></TextView>
+    <TextView android:layout_width="wrap_content" android:text="@string/HSBC" android:layout_height="wrap_content" android:id="@+id/textView2"></TextView>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/tableRow2">
+        <TextView android:text="@string/SP" android:layout_height="wrap_content" android:layout_width="216dp" android:id="@+id/TextView12"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView06" android:text="@string/t"></TextView>
+    </TableRow>
+    <EditText android:textSize="16px"     android:editable="false" android:layout_width="fill_parent" android:id="@+id/textHSBC" android:layout_height="35dp">
+    </EditText>
+    <TextView android:layout_width="30dp" android:text="@string/sp" android:layout_height="wrap_content" android:id="@+id/textView6"></TextView>
+    <TextView android:layout_width="wrap_content" android:text="@string/EXP" android:layout_height="wrap_content" android:id="@+id/textView3"></TextView>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/tableRow3">
+        <TextView android:text="@string/SP" android:layout_height="wrap_content" android:layout_width="216dp" android:id="@+id/TextView07"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView08" android:text="@string/t"></TextView>
+    </TableRow>
+    <EditText android:textSize="16px"  android:editable="false" android:layout_width="fill_parent" android:id="@+id/textEXP" android:layout_height="35dp"></EditText>
+    <TextView android:layout_width="32dp" android:text="@string/sp" android:layout_height="wrap_content" android:id="@+id/TextView04"></TextView>
+    <TextView android:layout_width="140dp" android:text="@string/ms" android:layout_height="wrap_content" android:id="@+id/textView4"></TextView>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/tableRow4">
+        <TextView android:text="@string/SP" android:layout_height="wrap_content" android:layout_width="216dp" android:id="@+id/TextView10"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/TextView13" android:text="@string/t"></TextView>
+    </TableRow>
+    <EditText android:textSize="16px"  android:editable="false" android:layout_width="fill_parent" android:id="@+id/textMS" android:layout_height="35dp"></EditText>
+    <TextView android:layout_width="30dp" android:text="@string/sp" android:layout_height="wrap_content" android:id="@+id/TextView02"></TextView>
+    <TextView android:layout_width="wrap_content" android:text="@string/SM" android:layout_height="wrap_content" android:id="@+id/textView5"></TextView>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/tableRow5">
+        <TextView android:text="@string/SP" android:layout_height="wrap_content" android:layout_width="216dp" android:id="@+id/TextView11"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView9" android:text="@string/t"></TextView>
+    </TableRow>
+    
+    <EditText android:textSize="15px"  android:editable="false" android:layout_width="fill_parent" android:id="@+id/textSN"   android:layout_height="34dp"></EditText>
+    <TableRow android:layout_width="fill_parent" android:id="@+id/tableRow8" android:layout_height="wrap_content">
+        <TextView android:text="@string/sp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView8"></TextView>
+    </TableRow>
+    <TableRow android:layout_width="fill_parent" android:id="@+id/tableRow7" android:layout_height="39dp">
+        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/textView7" android:text="@string/gt"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="100px" android:id="@+id/textView14" android:text="@string/esp"></TextView>
+        <EditText android:textSize="15px"  android:editable="false" android:layout_width="105px" android:id="@+id/textGT" android:layout_height="34dp"></EditText>
+    </TableRow>
+		
+<LinearLayout 
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:gravity="center_vertical"
+    android:weightSum="1">
+    <ImageView android:id="@+id/refresh" android:src="@drawable/refresh"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:paddingLeft="4dip"
+		android_paddingRight="4dip" />
+    <TableRow android:layout_width="wrap_content" android:layout_height="fill_parent" android:id="@+id/tableRow6"></TableRow>
+		</LinearLayout>
+
+</LinearLayout>
+</ScrollView>
