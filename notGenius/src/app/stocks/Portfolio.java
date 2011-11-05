@@ -36,7 +36,7 @@ public class Portfolio extends Activity
 	 */
 	public void refreshPage()
 	{
-		float gt =0;
+		float gt = 0;
 		BP = (EditText)findViewById(R.id.textBP);
 		HSBC = (EditText)findViewById(R.id.textHSBC);
 		EXP = (EditText)findViewById(R.id.textEXP);

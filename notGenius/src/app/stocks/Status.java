@@ -50,13 +50,13 @@ public class Status extends Activity
 			
 			if(currentPrice >= openPrice)
 			{
-				symbol1[x].setText( symbols[x] + " share price rockets by " + perc + "%" );
+				symbol1[x].setText( symbols[x] + " rockets by " + perc + "%" );
 				symbol1[x].setTextColor(Color.GREEN);
 			}
 			
 			else if(currentPrice <= openPrice)
 			{
-				symbol1[x].setText(symbols[x] + " share price plumets by " + perc + "%" );
+				symbol1[x].setText(symbols[x] + " plummets by " + perc + "%" );
 				symbol1[x].setTextColor(Color.RED);
 
 			}

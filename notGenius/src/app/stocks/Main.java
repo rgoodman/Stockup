@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class Main extends Activity
 {
 	/*
-	 * Creates a Listener for Status
+	 * Creates a Listener for Status Button
 	 */
 	OnClickListener portfolioPageListener = new OnClickListener()
 	{
@@ -25,7 +25,7 @@ public class Main extends Activity
 	};	
 
 	/*
-	 * Creates a Listener for Portfolio
+	 * Creates a Listener for Portfolio Button
 	 */
 	OnClickListener statusPageListener = new OnClickListener()
 	{
