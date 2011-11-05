@@ -15,11 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="summary" android:label="Summary Page">
+        <activity android:name=".Status" android:label="Summary Page">
         </activity>
         <activity android:name="detailed" android:label="My Portfolio">
         </activity>
-        <activity android:name=".shares" android:label="Top/Worst performers">
+        <activity android:name=".Portfolio" android:label="Top/Worst performers">
         </activity>
 
     </application>

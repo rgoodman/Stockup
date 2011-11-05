@@ -38,13 +38,13 @@ public class WebReader
 	 * 
 	 * Reference: http://weblogs.java.net/blog/pat/archive/2004/10/stupid_scanner_1.html
 	 */
-	public String readAll()
+	public String readLine()
 	{
-		if (!scanner.hasNextLine())
-		{
-			return null;
+		if (scanner.hasNextLine())
+		{			
+			return scanner.useDelimiter("\\A").next();
 		}
 		
-		return scanner.useDelimiter("\\A").next();
+		return null;
 	}
 }

@@ -13,19 +13,25 @@ import android.widget.EditText;
 
 public class Main extends Activity
 {
-	OnClickListener portfolioListener = new OnClickListener()
+	/*
+	 * Creates a Listener for Status
+	 */
+	OnClickListener portfolioPageListener = new OnClickListener()
 	{
 		public void onClick(View v)
 		{
-			loadPage(shares.class);
+			loadPage(Portfolio.class);
 		}
 	};	
 
+	/*
+	 * Creates a Listener for Portfolio
+	 */
 	OnClickListener statusPageListener = new OnClickListener()
 	{
 		public void onClick(View v)
 		{
-			loadPage(summary.class);
+			loadPage(Status.class);
 		}
 	};
 
@@ -34,18 +40,17 @@ public class Main extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
-		((Button) findViewById(R.id.btnPortfolio)).setOnClickListener(portfolioListener);
+		((Button) findViewById(R.id.btnPortfolio)).setOnClickListener(portfolioPageListener);
 		((Button) findViewById(R.id.btnStatus)).setOnClickListener(statusPageListener);
 	}
 
-
 	/*
-	 * 
+	 * Loads a page
 	 */
-	public void loadPage(Class<? extends Activity> hi)
+	public void loadPage(Class<? extends Activity> className)
 	{
-		Intent i = new Intent(this, hi);
-		startActivity(i);
+		Intent intent = new Intent(this, className);
+		startActivity(intent);
 	}
 }
 
