@@ -7,18 +7,17 @@
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
 <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
 
-
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/icon" android:label="StockUp">
         <activity android:name=".Main"
-                  android:label="JASS' App">
+                  android:label="StockUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="summary" android:label="JASS' Summary">
+        <activity android:name="summary" android:label="Summary Page">
         </activity>
-        <activity android:name="detailed" android:label="Share details">
+        <activity android:name="detailed" android:label="My Portfolio">
         </activity>
         <activity android:name=".shares" android:label="Top/Worst performers">
         </activity>

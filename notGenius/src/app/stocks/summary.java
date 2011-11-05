@@ -58,7 +58,7 @@ public class summary extends Activity {
          
     	for(int x=0;x<6;x++)
         {
-        	temp net = new temp(symbol[x]);
+    		WebReader net = new WebReader(symbol[x]);
             input = net.readAll();
             double currentPrice = currentPrice();
             double openPrice = openPrice();

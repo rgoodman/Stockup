@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Hello World, Main!</string>
-    <string name="app_name">Stocks</string>
+    <string name="app_name">StockUp</string>
     <string name="BP">BP Amoco</string>
     <string name="HSBC">HSBC</string>
     <string name="EXP">Experian</string>
