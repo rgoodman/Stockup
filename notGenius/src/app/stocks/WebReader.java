@@ -13,23 +13,28 @@ import java.util.Scanner;
 public class WebReader
 {
 	private static Scanner scanner;
-	private static final String prefixURL = "http://uk.finance.yahoo.com/q?s=";
+	
+	int trade;
+	int from;
+	int to;
+	
+	String input;
+	String price;
 	
 	/* 
 	 * Method to build the URL and read data from a Web site
 	 */
-	public WebReader(String stockURL)
+	public WebReader(URL url)
 	{
 		try
 		{
-			URL url = new URL(prefixURL + stockURL);
-			URLConnection site = url.openConnection();
-			InputStream inputStream = site.getInputStream();
+			URLConnection website = url.openConnection();
+			InputStream inputStream = website.getInputStream();
 			scanner = new Scanner(new BufferedInputStream(inputStream));
 		}
 		catch (IOException ioe) 
 		{
-			System.err.println("Could not open " + stockURL);
+			
 		}
 	}
 
@@ -46,5 +51,18 @@ public class WebReader
 		}
 		
 		return null;
+	}
+	
+	public double getPrice()
+	{		
+		input = readLine();
+		
+		trade = input.indexOf("Last Trade:", 0);
+		from = input.indexOf("<b><span", trade); 
+		from = input.indexOf(">", from + 4);	
+		int to = input.indexOf("</span></b>", from);
+
+		price = input.substring(from + 1, to); 
+		return Double.parseDouble(price);
 	}
 }

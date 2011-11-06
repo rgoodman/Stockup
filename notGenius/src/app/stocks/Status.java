@@ -1,9 +1,7 @@
 package app.stocks;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class Status extends Activity
@@ -16,11 +14,12 @@ public class Status extends Activity
 	String input;
 	
 	@Override
-	public void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.summary);
+		setContentView(R.layout.status);
 		STAT = (TextView)findViewById(R.id.txtStat); 
-		STAT.setText("Connection Status: Connected" );
+		STAT.setText("Connection Status: Connected");
 		compare();
 	}
 
@@ -37,11 +36,11 @@ public class Status extends Activity
 
 		BLVN = (TextView)findViewById(R.id.txtBLVN);
 
-		TextView[]symbol1 = {BP, HSBC, EXP, MS, SN, BLVN};
+		/*TextView[]symbol1 = {BP, HSBC, EXP, MS, SN, BLVN};
 
 		for(int x = 0; x < 6; x++)
 		{
-			WebReader net = new WebReader(symbol[x]);
+			WebReader net = new WebReader();
 			input = net.readLine();
 			double currentPrice = currentPrice();
 			double openPrice = openPrice();
@@ -60,7 +59,7 @@ public class Status extends Activity
 				symbol1[x].setTextColor(Color.RED);
 
 			}
-		}
+		}*/
 	}
 	
 	/*
@@ -71,7 +70,9 @@ public class Status extends Activity
 		int trade = input.indexOf("Open:", 0);
 		int from = input.indexOf("><td class", trade);
 		from = input.indexOf(">", from + 3);
+		
 		int to = input.indexOf("</td></tr>", from);
+		
 		String price = input.substring(from + 1, to);
 		return Double.parseDouble(price);
 	}
@@ -83,7 +84,9 @@ public class Status extends Activity
 		int trade = input.indexOf("Last Trade:", 0);
 		int from = input.indexOf("<b><span", trade); 
 		from = input.indexOf(">", from + 4);
+		
 		int to = input.indexOf("</span></b>", from);
+		
 		String price = input.substring(from + 1, to); 
 		return Double.parseDouble(price); 
 	} 

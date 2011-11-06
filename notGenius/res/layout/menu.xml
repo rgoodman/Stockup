@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  android:label="Main Menu"
-  android:baselineAligned="false" android:layout_width="wrap_content" android:weightSum="1" android:orientation="horizontal" android:layout_height="fill_parent">
-    <Button android:id="@+id/btnStatus" android:text="@string/stat" android:layout_marginLeft="47dp" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_weight="0.06" android:layout_width="98dp"></Button>
-    <Button android:id="@+id/btnPortfolio" android:layout_gravity="center_vertical" android:layout_weight="0.04" android:layout_width="97dp" android:layout_height="wrap_content" android:text="@string/pf"></Button>
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:baselineAligned="false"
+    android:label="Main Menu"
+    android:layout_height="fill_parent"
+    android:layout_width="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="1">
     
+    <Button
+    	android:id="@+id/btnStatus"
+    	android:layout_gravity="center_vertical"
+    	android:layout_height="wrap_content"
+    	android:layout_marginLeft="47dp"
+    	android:layout_weight="0.06"
+    	android:layout_width="98dp"
+    	android:text="Status">
+    </Button>
+    
+    <Button
+    	android:id="@+id/btnPortfolio"
+    	android:layout_gravity="center_vertical"
+    	android:layout_height="wrap_content"
+    	android:layout_weight="0.04"
+    	android:layout_width="97dp"
+    	android:text="Portfolio">
+    </Button>
 </LinearLayout>
