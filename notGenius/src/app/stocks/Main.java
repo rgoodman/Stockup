@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -56,12 +57,19 @@ public class Main extends Activity
 	
 	private void createPortfolio()
 	{
-		sharePortfolio.add(new ShareSet("BLVN", "Bowleven", 3960));
-		sharePortfolio.add(new ShareSet("BP", "British Petroleum", 192));
-		sharePortfolio.add(new ShareSet("EXPN", "Experian", 258));
-		sharePortfolio.add(new ShareSet("HSBA", "HSBC", 343));
-		sharePortfolio.add(new ShareSet("MKS", "Marks & Spencers", 485));
-		sharePortfolio.add(new ShareSet("SN", "Smith & Nephew", 1219));
+		TextView BLVN = null;
+		TextView BP = null;
+		TextView HSBC = null;
+		TextView EXP = null;
+		TextView MS = null;
+		TextView SN = null;
+		
+		sharePortfolio.add(new ShareSet("BLVN", "Bowleven", 3960, BLVN, R.id.textBLVN));
+		sharePortfolio.add(new ShareSet("BP", "British Petroleum", 192, BP, R.id.textBP));
+		sharePortfolio.add(new ShareSet("EXPN", "Experian", 258, EXP, R.id.textEXP));
+		sharePortfolio.add(new ShareSet("HSBA", "HSBC", 343, HSBC, R.id.textHSBC));
+		sharePortfolio.add(new ShareSet("MKS", "Marks & Spencers", 485, MS, R.id.textMS));
+		sharePortfolio.add(new ShareSet("SN", "Smith & Nephew", 1219, SN, R.id.textSN));
 	}
 }
 

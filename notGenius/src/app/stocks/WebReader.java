@@ -1,13 +1,11 @@
 package app.stocks;
 
 import java.io.BufferedInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class WebReader
@@ -18,7 +16,6 @@ public class WebReader
 	int from;
 	int to;
 	
-	String input;
 	String price;
 	
 	/* 
@@ -53,16 +50,25 @@ public class WebReader
 		return null;
 	}
 	
-	public double getPrice()
-	{		
-		input = readLine();
-		
+	public double getCurrentPrice(String input)
+	{
 		trade = input.indexOf("Last Trade:", 0);
 		from = input.indexOf("<b><span", trade); 
-		from = input.indexOf(">", from + 4);	
-		int to = input.indexOf("</span></b>", from);
-
+		from = input.indexOf(">", from + 4);		
+		to = input.indexOf("</span></b>", from);		
 		price = input.substring(from + 1, to); 
+		return Double.parseDouble(price); 
+	} 
+	/*
+	 * 
+	 */
+	public double getOpenPrice(String input)
+	{
+		trade = input.indexOf("Open:", 0);
+		from = input.indexOf("><td class", trade);
+		from = input.indexOf(">", from + 3);		
+		to = input.indexOf("</td></tr>", from);		
+		price = input.substring(from + 1, to);
 		return Double.parseDouble(price);
 	}
 }

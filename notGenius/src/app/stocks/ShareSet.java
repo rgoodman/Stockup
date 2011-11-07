@@ -2,6 +2,8 @@ package app.stocks;
 
 import java.net.URL;
 
+import android.widget.TextView;
+
 /*
  * ShareSet
  * 
@@ -13,6 +15,8 @@ public class ShareSet
 	private String companyName;
 	private int quantity;
 	private URL stockURL;
+	private TextView textFieldName;
+	private int textFieldContent;
 	private static final String prefixURL = "http://uk.finance.yahoo.com/q?s=";
 	private static final String londonExchangeURL = ".l";
 	
@@ -23,12 +27,14 @@ public class ShareSet
 	 * @param companyName
 	 * @param quantity
 	 */
-	public ShareSet(String stockCode, String companyName, int quantity)
+	public ShareSet(String stockCode, String companyName, int quantity, TextView textFieldName, int textFieldContent)
 	{
 		this.stockCode = stockCode;
 		this.companyName = companyName;
 		this.quantity = quantity;
 		this.stockURL = buildStockURL();
+		this.textFieldName = textFieldName;
+		this.textFieldContent = textFieldContent;
 	}
 	
 	private URL buildStockURL()
@@ -66,7 +72,17 @@ public class ShareSet
 	public URL getStockURL()
 	{
 		return this.stockURL;
-	}	
+	}
+	
+	public TextView getTextFieldName()
+	{
+		return textFieldName;
+	}
+	
+	public int getTextFieldContent()
+	{
+		return textFieldContent;
+	}
 	
 	// Mutators
 	public void setStockCode(String newStockCode)

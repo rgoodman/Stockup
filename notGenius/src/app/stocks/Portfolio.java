@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,16 +15,15 @@ public class Portfolio extends Activity
 	public ArrayList<ShareSet> myShares = Main.sharePortfolio;	
 	Iterator<ShareSet> iterator = myShares.iterator();
 	ShareSet mySet;
-	
-	EditText BP, HSBC, EXP , MS, SN, GT, BLVN;
+
+	TextView GT, textField;
 
 	WebReader reader;
 	
-	int counter;
 	double sharePrice;	
 	
 	float grandTotal;
-	float total;
+	float shareSetTotal;
 
 	String input;
 	String result;
@@ -33,7 +32,7 @@ public class Portfolio extends Activity
 	{
 		public void onClick(View v)
 		{
-			refreshPage();
+			refreshPortfolioPage();
 		}
 	};
 
@@ -42,37 +41,29 @@ public class Portfolio extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.portfolio);
 		((ImageView) findViewById(R.id.refresh)).setOnClickListener(refreshPortfolioListener);
-		refreshPage();
+		refreshPortfolioPage();
 	}
 
 	/*
 	 * Refreshes all Portfolio values
 	 */
-	public void refreshPage()
+	public void refreshPortfolioPage()
 	{
-		counter = 0;
-		grandTotal = 0;
-		
-		BLVN = (EditText)findViewById(R.id.textBW);
-		BP = (EditText)findViewById(R.id.textBP);
-		HSBC = (EditText)findViewById(R.id.textHSBC);
-		EXP = (EditText)findViewById(R.id.textEXP);
-		MS = (EditText)findViewById(R.id.textMS);
-		SN = (EditText)findViewById(R.id.textSN);
-		GT = (EditText)findViewById(R.id.textGT);
-
-		EditText [] symbol1 = {BLVN, BP, EXP, HSBC, MS, SN};
+		grandTotal = 0;		
+		GT = (TextView)findViewById(R.id.textGT);
 		
 		while(iterator.hasNext())
 		{
-			mySet = iterator.next();			
+			mySet = iterator.next();
+			textField = mySet.getTextFieldName();
+			textField = (TextView)findViewById(mySet.getTextFieldContent());
 			reader = new WebReader(mySet.getStockURL());
-			sharePrice = reader.getPrice();
-			total = (float)(sharePrice * mySet.getQuantity());
-			grandTotal += total;
-			result = String.format("%.0f", total/100);
-			symbol1[counter].setText(String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   £" + result);
-			counter++;
+			input = reader.readLine();
+			sharePrice = reader.getCurrentPrice(input);
+			shareSetTotal = (float)(sharePrice * mySet.getQuantity());
+			grandTotal += shareSetTotal;
+			result = String.format("%.0f", shareSetTotal/100);
+			textField.setText(String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   £" + result);
 		}
 		
 		result = String.format("%.0f", grandTotal/100);
