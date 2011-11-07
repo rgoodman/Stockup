@@ -41,7 +41,7 @@ public class Main extends Activity
 	{
 		createPortfolio();
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.menu);
+		setContentView(R.layout.menu); //hello
 		((Button) findViewById(R.id.btnPortfolio)).setOnClickListener(portfolioPageListener);
 		((Button) findViewById(R.id.btnStatus)).setOnClickListener(statusPageListener);
 	}
@@ -59,8 +59,8 @@ public class Main extends Activity
 	{
 		TextView BLVN = null;
 		TextView BP = null;
-		TextView HSBC = null;
 		TextView EXP = null;
+		TextView HSBC = null;
 		TextView MS = null;
 		TextView SN = null;
 		

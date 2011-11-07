@@ -2,83 +2,85 @@
 
 <LinearLayout 
 	xmlns:android="http://schemas.android.com/apk/res/android"
-     android:gravity="center_vertical" 
-     android:layout_width="fill_parent" 
-     android:layout_weight="0.62" 
-     android:orientation="vertical" 
-     android:layout_height="wrap_content">
-     
+	android:gravity="center_vertical" 
+    android:layout_width="fill_parent" 
+    android:layout_weight="0.62" 
+	android:orientation="vertical" 
+	android:layout_height="wrap_content">
+    
+    <!-- Page Title -->
     <TextView 
-    	android:textSize="24px" 
-    	android:id="@+id/textView1" 
-    	android:text="@string/stat" 
+    	android:id="@+id/textView1"
+    	android:layout_height="72dp"
     	android:layout_width="fill_parent" 
     	android:paddingLeft="110dp" 
-    	android:layout_height="72dp">
+    	android:text="@string/stat" 
+    	android:textSize="24px" >
     </TextView>
     
+    <!-- Connection Status -->
     <TextView 
-    	android:textAppearance="?android:attr/textAppearanceLarge" 
-    	android:text="@string/inter" 
-    	android:layout_width="fill_parent" 
     	android:id="@+id/txtStat" 
-    	android:textStyle="bold" 
+    	android:layout_width="fill_parent"
     	android:layout_height="70dp" 
-    	android:textSize="20px">
+    	android:text="@string/inter" 
+    	android:textAppearance="?android:attr/textAppearanceLarge"  
+    	android:textSize="20px"
+    	android:textStyle="bold">
     </TextView>
     
+    <!-- Bowleven -->
     <TextView 
-    	android:text="@string/sp" 
-    	android:id="@+id/txtBP" 
-    	android:textSize="18px" 
-    	android:textStyle="bold" 
-    	android:layout_width="fill_parent" 
-    	android:layout_height="wrap_content">
-    </TextView>
-    
-    <TextView 
-    	android:text="@string/sp" 
+    	android:id="@+id/txtBLVN" 
     	android:layout_height="wrap_content" 
-		android:textStyle="bold" 
-		android:textSize="18px" 
+    	android:layout_width="fill_parent"
+    	android:textStyle="bold" 
+    	android:textSize="18px" >
+    </TextView>
+    
+    <!-- BP Amoco -->
+    <TextView 
+    	android:id="@+id/txtBP"
+    	android:layout_height="wrap_content"
+    	android:layout_width="fill_parent"
+    	android:textSize="18px" 
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- HSBC -->
+    <TextView 
 		android:id="@+id/txtHSBC" 
-		android:layout_width="fill_parent">
+    	android:layout_height="wrap_content" 
+		android:layout_width="fill_parent"
+		android:textSize="18px" 
+		android:textStyle="bold" >
 	</TextView>
 	
-    <TextView 
-    	android:text="@string/sp" 
+	<!-- Experian -->
+    <TextView  
+    	android:id="@+id/txtEXP"
     	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
     	android:textStyle="bold" 
-    	android:textSize="18px" 
-    	android:id="@+id/txtEXP" 
-    	android:layout_width="fill_parent">
+    	android:textSize="18px" >
     </TextView>
     
-    <TextView
-    	android:text="@string/sp" 
-    	android:layout_height="wrap_content" 
-    	android:textStyle="bold" 
-    	android:textSize="18px" 
+    <!-- Marks & Spencers -->
+    <TextView 
     	android:id="@+id/txtMS" 
-    	android:layout_width="fill_parent">
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
+    	android:textSize="18px" 
+    	android:textStyle="bold">
     </TextView>
     
+    <!-- Smith & Nephew-->
     <TextView 
-    	android:text="@string/sp" 
-    	android:layout_height="wrap_content" 
-    	android:textStyle="bold" 
-    	android:textSize="18px" 
     	android:id="@+id/txtSN" 
-    	android:layout_width="fill_parent">
-    </TextView>
-    
-    <TextView 
-    	android:text="@string/sp" 
     	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
     	android:textStyle="bold" 
-    	android:textSize="18px" 
-    	android:id="@+id/txtBLVN" 
-    	android:layout_width="fill_parent">
+    	android:textSize="18px" >
     </TextView>
 </LinearLayout>
 

@@ -32,12 +32,12 @@ public final class R {
         public static final int textView4=0x7f050009;
         public static final int textView5=0x7f05000b;
         public static final int textView7=0x7f05000f;
-        public static final int txtBLVN=0x7f050017;
-        public static final int txtBP=0x7f050012;
-        public static final int txtEXP=0x7f050014;
-        public static final int txtHSBC=0x7f050013;
-        public static final int txtMS=0x7f050015;
-        public static final int txtSN=0x7f050016;
+        public static final int txtBLVN=0x7f050012;
+        public static final int txtBP=0x7f050013;
+        public static final int txtEXP=0x7f050015;
+        public static final int txtHSBC=0x7f050014;
+        public static final int txtMS=0x7f050016;
+        public static final int txtSN=0x7f050017;
         public static final int txtStat=0x7f050011;
     }
     public static final class layout {

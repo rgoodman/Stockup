@@ -55,7 +55,6 @@ public class Portfolio extends Activity
 		while(iterator.hasNext())
 		{
 			mySet = iterator.next();
-			textField = mySet.getTextFieldName();
 			textField = (TextView)findViewById(mySet.getTextFieldContent());
 			reader = new WebReader(mySet.getStockURL());
 			input = reader.readLine();

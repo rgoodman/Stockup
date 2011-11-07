@@ -50,7 +50,7 @@ public class Status extends Activity
 		MS = (TextView)findViewById(R.id.txtMS);
 		SN = (TextView)findViewById(R.id.txtSN);
 
-		TextView[]symbol1 = {BP, EXP, HSBC, MS, SN, BLVN};
+		TextView[]symbol1 = {BLVN, BP, EXP, HSBC, MS, SN};
 
 		int x = 0;
 		
