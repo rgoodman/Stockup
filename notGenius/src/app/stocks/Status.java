@@ -9,13 +9,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class Status extends Activity
-{
-	private TextView BP, HSBC, EXP, MS, SN, BLVN, STAT;
-	String[] symbols = {"BLVN", "BP", "EXP", "HSBC", "MS", "SN"};
-	
+{	
 	private ArrayList<ShareSet> myShares = Main.sharePortfolio;
 	Iterator<ShareSet> iterator = myShares.iterator();
 	ShareSet mySet;
+	
+	TextView connectionStatus, fieldID;
 	
 	int color;
 	WebReader reader;
@@ -33,8 +32,8 @@ public class Status extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.status);
-		STAT = (TextView)findViewById(R.id.txtStat); 
-		STAT.setText("Connection Status: Connected");
+		connectionStatus = (TextView)findViewById(R.id.textStat); 
+		connectionStatus.setText("Internet : Connected");
 		compareSharePrice();
 	}
 
@@ -42,21 +41,11 @@ public class Status extends Activity
 	 *
 	 */
 	public void compareSharePrice()
-	{
-		BLVN = (TextView)findViewById(R.id.txtBLVN);
-		BP = (TextView)findViewById(R.id.txtBP);
-		EXP = (TextView)findViewById(R.id.txtEXP);
-		HSBC = (TextView)findViewById(R.id.txtHSBC);
-		MS = (TextView)findViewById(R.id.txtMS);
-		SN = (TextView)findViewById(R.id.txtSN);
-
-		TextView[]symbol1 = {BLVN, BP, EXP, HSBC, MS, SN};
-
-		int x = 0;
-		
+	{		
 		while(iterator.hasNext())
 		{
 			mySet = iterator.next();
+			fieldID = (TextView)findViewById(mySet.getStatusFieldID());
 			reader = new WebReader(mySet.getStockURL());
 			input = reader.readLine();
 			currentPrice = reader.getCurrentPrice(input);
@@ -76,10 +65,8 @@ public class Status extends Activity
 				shareDirection = "plummeted";
 			}
 
-			symbol1[x].setText(symbols[x] + " has " + shareDirection + " by " + percentage + "%");
-			symbol1[x].setTextColor(color);
-			
-			x++;
+			fieldID.setText(mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%");
+			fieldID.setTextColor(color);
 		}
 	}
 }

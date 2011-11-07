@@ -2,8 +2,6 @@ package app.stocks;
 
 import java.net.URL;
 
-import android.widget.TextView;
-
 /*
  * ShareSet
  * 
@@ -11,14 +9,17 @@ import android.widget.TextView;
  */
 public class ShareSet
 {
-	private String stockCode;
-	private String companyName;
+	private int portfolioFieldID;
 	private int quantity;
-	private URL stockURL;
-	private TextView textFieldName;
-	private int textFieldContent;
+	private int statusFieldID;
+	
 	private static final String prefixURL = "http://uk.finance.yahoo.com/q?s=";
 	private static final String londonExchangeURL = ".l";
+	
+	private String companyName;
+	private String stockCode;
+		
+	private URL stockURL;
 	
 	/*
 	 * ShareSet 
@@ -27,14 +28,14 @@ public class ShareSet
 	 * @param companyName
 	 * @param quantity
 	 */
-	public ShareSet(String stockCode, String companyName, int quantity, TextView textFieldName, int textFieldContent)
+	public ShareSet(String stockCode, String companyName, int quantity, int portfolioFieldID, int statusFieldID)
 	{
-		this.stockCode = stockCode;
 		this.companyName = companyName;
+		this.portfolioFieldID = portfolioFieldID;
 		this.quantity = quantity;
-		this.stockURL = buildStockURL();
-		this.textFieldName = textFieldName;
-		this.textFieldContent = textFieldContent;
+		this.statusFieldID = statusFieldID;
+		this.stockCode = stockCode;
+		this.stockURL = buildStockURL();		
 	}
 	
 	private URL buildStockURL()
@@ -54,41 +55,37 @@ public class ShareSet
 	}
 	
 	// Accessors 
-	public String getStockCode()
-	{
-		return this.stockCode;
-	}
-	
 	public String getCompanyName()
 	{
-		return this.companyName;
+		return companyName;
+	}
+	
+	public int getPortfolioFieldID()
+	{
+		return portfolioFieldID;
 	}
 	
 	public int getQuantity()
 	{
-		return this.quantity;
+		return quantity;
 	}
+	
+	public String getStockCode()
+	{
+		return stockCode;
+	}	
 	
 	public URL getStockURL()
 	{
-		return this.stockURL;
+		return stockURL;
 	}
-	
-	public TextView getTextFieldName()
+		
+	public int getStatusFieldID()
 	{
-		return textFieldName;
-	}
-	
-	public int getTextFieldContent()
-	{
-		return textFieldContent;
+		return statusFieldID;
 	}
 	
 	// Mutators
-	public void setStockCode(String newStockCode)
-	{
-		this.stockCode = newStockCode;
-	}
 	
 	public void setCompanyName(String newCompanyName)
 	{
@@ -100,6 +97,11 @@ public class ShareSet
 		this.quantity = newQuantity;
 	}
 	
+	public void setStockCode(String newStockCode)
+	{
+		this.stockCode = newStockCode;
+	}
+			
 	public void setStockURL(URL newStockURL)
 	{
 		this.stockURL = newStockURL;

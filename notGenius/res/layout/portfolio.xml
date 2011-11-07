@@ -31,7 +31,6 @@
 	    </TextView>
 	     
 	    <TextView
-	        android:editable="false"
 	        android:id="@+id/textBLVN"
 	        android:layout_height="34dp"
 	        android:layout_width="fill_parent"
@@ -47,7 +46,6 @@
 	    </TextView>
 	    
 	    <TextView 
-	    	android:editable="false"
 	    	android:id="@+id/textBP"
 	    	android:layout_height="35dp"
 	    	android:layout_width="fill_parent"
@@ -63,8 +61,7 @@
 	    </TextView>
 	    
 	    <TextView 
-	    	android:editable="false"
-	    	android:id="@+id/textEXP"
+	    	android:id="@+id/textEXPN"
 	    	android:layout_height="35dp"
 	    	android:layout_width="fill_parent"
 	    	android:textSize="16px">
@@ -79,7 +76,6 @@
 	    </TextView>
 	    
 	    <TextView 
-	    	android:editable="false" 
 	    	android:id="@+id/textHSBC" 
 	    	android:layout_height="35dp"
 	    	android:layout_width="fill_parent" 
@@ -95,8 +91,7 @@
 	    </TextView>
 	    
 	    <TextView
-	    	android:id="@+id/textMS"   
-	    	android:editable="false"
+	    	android:id="@+id/textMS"  
 	    	android:layout_height="34dp" 
 	    	android:layout_width="fill_parent"
 	    	android:textSize="15px" >
@@ -111,7 +106,6 @@
 	    </TextView>
 	    
 	    <TextView
-	    	android:editable="false" 
 	    	android:id="@+id/textSN"
 	    	android:layout_height="35dp" 
 	    	android:layout_width="fill_parent" 
@@ -132,7 +126,6 @@
 	        </TextView>
 	        
 	        <TextView
-	        	android:editable="false" 
 	        	android:id="@+id/textGT" 
 	        	android:layout_height="34dp"
 	        	android:layout_width="105px"

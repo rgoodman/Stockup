@@ -20,7 +20,7 @@
     
     <!-- Connection Status -->
     <TextView 
-    	android:id="@+id/txtStat" 
+    	android:id="@+id/textStat" 
     	android:layout_width="fill_parent"
     	android:layout_height="70dp" 
     	android:text="@string/inter" 
@@ -58,7 +58,7 @@
 	
 	<!-- Experian -->
     <TextView  
-    	android:id="@+id/txtEXP"
+    	android:id="@+id/txtEXPN"
     	android:layout_height="wrap_content" 
     	android:layout_width="fill_parent"
     	android:textStyle="bold" 

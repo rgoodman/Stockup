@@ -16,7 +16,7 @@ public class Portfolio extends Activity
 	Iterator<ShareSet> iterator = myShares.iterator();
 	ShareSet mySet;
 
-	TextView GT, textField;
+	TextView GT, fieldID;
 
 	WebReader reader;
 	
@@ -55,14 +55,14 @@ public class Portfolio extends Activity
 		while(iterator.hasNext())
 		{
 			mySet = iterator.next();
-			textField = (TextView)findViewById(mySet.getTextFieldContent());
+			fieldID = (TextView)findViewById(mySet.getPortfolioFieldID());
 			reader = new WebReader(mySet.getStockURL());
 			input = reader.readLine();
 			sharePrice = reader.getCurrentPrice(input);
 			shareSetTotal = (float)(sharePrice * mySet.getQuantity());
 			grandTotal += shareSetTotal;
 			result = String.format("%.0f", shareSetTotal/100);
-			textField.setText(String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   £" + result);
+			fieldID.setText(String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   £" + result);
 		}
 		
 		result = String.format("%.0f", grandTotal/100);

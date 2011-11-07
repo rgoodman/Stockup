@@ -14,8 +14,7 @@
     	android:layout_gravity="center_vertical"
     	android:layout_height="wrap_content"
     	android:layout_marginLeft="47dp"
-    	android:layout_weight="0.06"
-    	android:layout_width="98dp"
+    	android:layout_width="96dp"
     	android:text="Status">
     </Button>
     
@@ -23,8 +22,7 @@
     	android:id="@+id/btnPortfolio"
     	android:layout_gravity="center_vertical"
     	android:layout_height="wrap_content"
-    	android:layout_weight="0.04"
-    	android:layout_width="97dp"
+    	android:layout_width="96dp"
     	android:text="Portfolio">
     </Button>
 </LinearLayout>
