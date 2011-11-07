@@ -31,7 +31,7 @@
 	    </TextView>
 	     
 	    <TextView
-	        android:id="@+id/textBLVN"
+	        android:id="@+id/portfolioTextBLVN"
 	        android:layout_height="34dp"
 	        android:layout_width="fill_parent"
 	        android:textSize="16px">
@@ -46,7 +46,7 @@
 	    </TextView>
 	    
 	    <TextView 
-	    	android:id="@+id/textBP"
+	    	android:id="@+id/portfolioTextBP"
 	    	android:layout_height="35dp"
 	    	android:layout_width="fill_parent"
 	    	android:textSize="16px">
@@ -61,7 +61,7 @@
 	    </TextView>
 	    
 	    <TextView 
-	    	android:id="@+id/textEXPN"
+	    	android:id="@+id/portfolioTextEXPN"
 	    	android:layout_height="35dp"
 	    	android:layout_width="fill_parent"
 	    	android:textSize="16px">
@@ -76,7 +76,7 @@
 	    </TextView>
 	    
 	    <TextView 
-	    	android:id="@+id/textHSBC" 
+	    	android:id="@+id/portfolioTextHSBC" 
 	    	android:layout_height="35dp"
 	    	android:layout_width="fill_parent" 
 	    	android:textSize="16px"  >
@@ -91,7 +91,7 @@
 	    </TextView>
 	    
 	    <TextView
-	    	android:id="@+id/textMS"  
+	    	android:id="@+id/portfolioTextMS"  
 	    	android:layout_height="34dp" 
 	    	android:layout_width="fill_parent"
 	    	android:textSize="15px" >
@@ -106,7 +106,7 @@
 	    </TextView>
 	    
 	    <TextView
-	    	android:id="@+id/textSN"
+	    	android:id="@+id/portfolioTextSN"
 	    	android:layout_height="35dp" 
 	    	android:layout_width="fill_parent" 
 	    	android:textSize="16px"  >

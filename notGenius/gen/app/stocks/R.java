@@ -17,15 +17,21 @@ public final class R {
     public static final class id {
         public static final int btnPortfolio=0x7f050001;
         public static final int btnStatus=0x7f050000;
+        public static final int portfolioTextBLVN=0x7f050004;
+        public static final int portfolioTextBP=0x7f050006;
+        public static final int portfolioTextEXPN=0x7f050008;
+        public static final int portfolioTextHSBC=0x7f05000a;
+        public static final int portfolioTextMS=0x7f05000c;
+        public static final int portfolioTextSN=0x7f05000d;
         public static final int refresh=0x7f050002;
+        public static final int statusTextBLVN=0x7f050012;
+        public static final int statusTextBP=0x7f050013;
+        public static final int statusTextEXPN=0x7f050015;
+        public static final int statusTextHSBC=0x7f050014;
+        public static final int statusTextMS=0x7f050016;
+        public static final int statusTextSN=0x7f050017;
         public static final int tableRow7=0x7f05000e;
-        public static final int textBLVN=0x7f050004;
-        public static final int textBP=0x7f050006;
-        public static final int textEXPN=0x7f050008;
         public static final int textGT=0x7f050010;
-        public static final int textHSBC=0x7f05000a;
-        public static final int textMS=0x7f05000c;
-        public static final int textSN=0x7f05000d;
         public static final int textStat=0x7f050011;
         public static final int textView1=0x7f050003;
         public static final int textView2=0x7f050005;
@@ -33,12 +39,6 @@ public final class R {
         public static final int textView4=0x7f050009;
         public static final int textView5=0x7f05000b;
         public static final int textView7=0x7f05000f;
-        public static final int txtBLVN=0x7f050012;
-        public static final int txtBP=0x7f050013;
-        public static final int txtEXPN=0x7f050015;
-        public static final int txtHSBC=0x7f050014;
-        public static final int txtMS=0x7f050016;
-        public static final int txtSN=0x7f050017;
     }
     public static final class layout {
         public static final int menu=0x7f030000;

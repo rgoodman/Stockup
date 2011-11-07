@@ -1,6 +1,7 @@
 package app.stocks;
 
 import android.app.Activity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.text.NumberFormat;
+import java.math.*;
 
 public class Portfolio extends Activity
 {
@@ -26,7 +29,7 @@ public class Portfolio extends Activity
 	float shareSetTotal;
 
 	String input;
-	String result;
+	String total;
 
 	OnClickListener refreshPortfolioListener = new OnClickListener()
 	{
@@ -61,12 +64,21 @@ public class Portfolio extends Activity
 			sharePrice = reader.getCurrentPrice(input);
 			shareSetTotal = (float)(sharePrice * mySet.getQuantity());
 			grandTotal += shareSetTotal;
-			result = String.format("%.0f", shareSetTotal/100);
-			fieldID.setText(String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   £" + result);
+			total = formatCurrency((shareSetTotal/100));
+			fieldID.setText(String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   " + total);
 		}
 		
-		result = String.format("%.0f", grandTotal/100);
-		GT.setText("£" + result);
+		GT.setText(formatCurrency(grandTotal/100));
+	}
+	
+	private String formatCurrency(double value)
+	{
+		BigDecimal myDecimal = new BigDecimal(value);
+		myDecimal.setScale(0, BigDecimal.ROUND_DOWN);
+		
+	    NumberFormat myFormat = NumberFormat.getCurrencyInstance();
+	    String output = myFormat.format(myDecimal);
+	    return output;
 	}
 }
 

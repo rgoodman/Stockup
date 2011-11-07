@@ -31,7 +31,7 @@
     
     <!-- Bowleven -->
     <TextView 
-    	android:id="@+id/txtBLVN" 
+    	android:id="@+id/statusTextBLVN" 
     	android:layout_height="wrap_content" 
     	android:layout_width="fill_parent"
     	android:textStyle="bold" 
@@ -40,7 +40,7 @@
     
     <!-- BP Amoco -->
     <TextView 
-    	android:id="@+id/txtBP"
+    	android:id="@+id/statusTextBP"
     	android:layout_height="wrap_content"
     	android:layout_width="fill_parent"
     	android:textSize="18px" 
@@ -49,7 +49,7 @@
     
     <!-- HSBC -->
     <TextView 
-		android:id="@+id/txtHSBC" 
+		android:id="@+id/statusTextHSBC" 
     	android:layout_height="wrap_content" 
 		android:layout_width="fill_parent"
 		android:textSize="18px" 
@@ -58,7 +58,7 @@
 	
 	<!-- Experian -->
     <TextView  
-    	android:id="@+id/txtEXPN"
+    	android:id="@+id/statusTextEXPN"
     	android:layout_height="wrap_content" 
     	android:layout_width="fill_parent"
     	android:textStyle="bold" 
@@ -67,7 +67,7 @@
     
     <!-- Marks & Spencers -->
     <TextView 
-    	android:id="@+id/txtMS" 
+    	android:id="@+id/statusTextMS" 
     	android:layout_height="wrap_content" 
     	android:layout_width="fill_parent"
     	android:textSize="18px" 
@@ -76,7 +76,7 @@
     
     <!-- Smith & Nephew-->
     <TextView 
-    	android:id="@+id/txtSN" 
+    	android:id="@+id/statusTextSN" 
     	android:layout_height="wrap_content" 
     	android:layout_width="fill_parent"
     	android:textStyle="bold" 

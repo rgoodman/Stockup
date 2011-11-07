@@ -56,12 +56,12 @@ public class Main extends Activity
 	
 	private void createPortfolio()
 	{		
-		sharePortfolio.add(new ShareSet("BLVN", "Bowleven", 3960, R.id.textBLVN, R.id.txtBLVN));
-		sharePortfolio.add(new ShareSet("BP", "British Petroleum", 192, R.id.textBP, R.id.txtBP));
-		sharePortfolio.add(new ShareSet("EXPN", "Experian", 258, R.id.textEXPN, R.id.txtEXPN));
-		sharePortfolio.add(new ShareSet("HSBA", "HSBC", 343, R.id.textHSBC, R.id.txtHSBC));
-		sharePortfolio.add(new ShareSet("MKS", "Marks & Spencers", 485, R.id.textMS, R.id.txtMS));
-		sharePortfolio.add(new ShareSet("SN", "Smith & Nephew", 1219, R.id.textSN, R.id.txtSN));
+		sharePortfolio.add(new ShareSet("BLVN", "Bowleven", 3960, R.id.portfolioTextBLVN, R.id.statusTextBLVN));
+		sharePortfolio.add(new ShareSet("BP", "British Petroleum", 192, R.id.portfolioTextBP, R.id.statusTextBP));
+		sharePortfolio.add(new ShareSet("EXPN", "Experian", 258, R.id.portfolioTextEXPN, R.id.statusTextEXPN));
+		sharePortfolio.add(new ShareSet("HSBA", "HSBC", 343, R.id.portfolioTextHSBC, R.id.statusTextHSBC));
+		sharePortfolio.add(new ShareSet("MKS", "Marks & Spencers", 485, R.id.portfolioTextMS, R.id.statusTextMS));
+		sharePortfolio.add(new ShareSet("SN", "Smith & Nephew", 1219, R.id.portfolioTextSN, R.id.statusTextSN));
 	}
 }
 
