@@ -1,16 +1,20 @@
 package app.stocks;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class Main extends Activity
-{
+{	
 	public static ArrayList<ShareSet> sharePortfolio = new ArrayList<ShareSet>();	
 	
 	/*
@@ -38,11 +42,23 @@ public class Main extends Activity
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
 	{
-		createPortfolio();
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.menu);
-		((Button) findViewById(R.id.btnPortfolio)).setOnClickListener(portfolioPageListener);
-		((Button) findViewById(R.id.btnStatus)).setOnClickListener(statusPageListener);
+		if (HaveNetworkConnection())
+		{
+			createPortfolio();
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.menu);
+			((Button) findViewById(R.id.btnPortfolio)).setOnClickListener(portfolioPageListener);
+			((Button) findViewById(R.id.btnStatus)).setOnClickListener(statusPageListener);
+		}
+		else
+		{
+			Context context = getApplicationContext();
+			CharSequence text = "You have no internet connection!";
+			int duration = Toast.LENGTH_SHORT;
+
+			Toast toast = Toast.makeText(context, text, duration);
+			toast.show();
+		}
 	}
 
 	/*
@@ -63,6 +79,26 @@ public class Main extends Activity
 		sharePortfolio.add(new ShareSet("MKS", "Marks & Spencers", 485, R.id.portfolioTextMS, R.id.statusTextMS));
 		sharePortfolio.add(new ShareSet("SN", "Smith & Nephew", 1219, R.id.portfolioTextSN, R.id.statusTextSN));
 	}
+	
+	private boolean HaveNetworkConnection()
+	{
+	    boolean HaveConnectedWifi = false;
+	    boolean HaveConnectedMobile = false;
+
+	    ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+	    for (NetworkInfo ni : netInfo)
+	    {
+	        if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+	            if (ni.isConnected())
+	                HaveConnectedWifi = true;
+	        if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+	            if (ni.isConnected())
+	                HaveConnectedMobile = true;
+	    }
+	    return HaveConnectedWifi || HaveConnectedMobile;
+	}
+
 }
 
 
