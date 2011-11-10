@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Locale;
 import java.text.NumberFormat;
 import java.math.*;
 
@@ -76,7 +77,7 @@ public class Portfolio extends Activity
 		BigDecimal myDecimal = new BigDecimal(value);
 		myDecimal.setScale(0, BigDecimal.ROUND_DOWN);
 		
-	    NumberFormat myFormat = NumberFormat.getCurrencyInstance();
+	    NumberFormat myFormat = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
 	    String output = myFormat.format(myDecimal);
 	    return output;
 	}
