@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:gravity="center_vertical" 
+    android:layout_width="fill_parent" 
+    android:layout_weight="0.62" 
+	android:orientation="vertical" 
+	android:layout_height="wrap_content">
+    
+    <!-- Page Title -->
+    <TextView 
+    	android:id="@+id/textView1"
+    	android:layout_height="72dp"
+    	android:layout_width="fill_parent" 
+    	android:paddingLeft="110dp" 
+    	
+    	android:textSize="24px" >
+    </TextView>
+    
+    <!-- Connection Status -->
+    <TextView 
+    	android:id="@+id/textStat" 
+    	android:layout_width="fill_parent"
+    	android:layout_height="70dp" 
+    	
+    	android:textAppearance="?android:attr/textAppearanceLarge"  
+    	android:textSize="20px"
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- Bowleven -->
+    <TextView 
+    	android:id="@+id/statusTextBLVN" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
+    	android:textStyle="bold" 
+    	android:textSize="18px" >
+    </TextView>
+    
+    <!-- BP Amoco -->
+    <TextView 
+    	android:id="@+id/statusTextBP"
+    	android:layout_height="wrap_content"
+    	android:layout_width="fill_parent"
+    	android:textSize="18px" 
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- HSBC -->
+    <TextView 
+		android:id="@+id/statusTextHSBC" 
+    	android:layout_height="wrap_content" 
+		android:layout_width="fill_parent"
+		android:textSize="18px" 
+		android:textStyle="bold" >
+	</TextView>
+	
+	<!-- Experian -->
+    <TextView  
+    	android:id="@+id/statusTextEXPN"
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
+    	android:textStyle="bold" 
+    	android:textSize="18px" >
+    </TextView>
+    
+    <!-- Marks & Spencers -->
+    <TextView 
+    	android:id="@+id/statusTextMS" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
+    	android:textSize="18px" 
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- Smith & Nephew-->
+    <TextView 
+    	android:id="@+id/statusTextSN" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
+    	android:textStyle="bold" 
+    	android:textSize="18px" >
+    </TextView>
+</LinearLayout>
+

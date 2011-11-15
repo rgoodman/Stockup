@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:label="Main Menu"
+	android:layout_gravity="fill"
+	android:layout_height="fill_parent"
+	android:layout_width="fill_parent"
+	android:scrollbars="vertical">
+
+	<LinearLayout
+	    android:gravity="center_vertical"
+	    android:layout_height="fill_parent"
+	    android:layout_width="fill_parent"
+	    android:orientation="vertical">
+	    
+	    <!-- Refresh Button -->
+	    
+	    
+	    <!-- Bowleven -->
+	    <TextView
+	    	android:id="@+id/textView1"
+	    	android:layout_height="wrap_content"
+	    	android:layout_width="wrap_content"
+	    	android:text="Bowleven">
+	    </TextView>
+	     
+	    <TextView
+	        android:id="@+id/portfolioTextBLVN"
+	        android:layout_height="34dp"
+	        android:layout_width="fill_parent"
+	        android:textSize="16px">
+	    </TextView>
+	    
+	    <!-- BP Amoco -->
+	    <TextView 
+	    	android:id="@+id/textView2"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:text="BP Amoco">
+	    </TextView>
+	    
+	    <TextView 
+	    	android:id="@+id/portfolioTextBP"
+	    	android:layout_height="35dp"
+	    	android:layout_width="fill_parent"
+	    	android:textSize="16px">
+	    </TextView>
+	    
+	    <!-- Experian -->
+	    <TextView 
+	    	android:id="@+id/textView3"
+	    	android:layout_height="wrap_content"
+	    	android:layout_width="wrap_content"
+	    	android:text="Experian">
+	    </TextView>
+	    
+	    <TextView 
+	    	android:id="@+id/portfolioTextEXPN"
+	    	android:layout_height="35dp"
+	    	android:layout_width="fill_parent"
+	    	android:textSize="16px">
+	    </TextView>
+	    
+	    <!-- HSBC -->
+	    <TextView 
+	    	android:id="@+id/textView4"
+	    	android:layout_height="wrap_content"
+	    	android:layout_width="140dp"
+	    	android:text="HSBC">
+	    </TextView>
+	    
+	    <TextView 
+	    	android:id="@+id/portfolioTextHSBC" 
+	    	android:layout_height="35dp"
+	    	android:layout_width="fill_parent" 
+	    	android:textSize="16px"  >
+	    </TextView>
+	    
+	    <!-- Marks & Spencers -->
+	    <TextView 
+	    	android:id="@+id/textView5" 
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="wrap_content" 
+	    	android:text="Marks &amp; Spencers">
+	    </TextView>
+	    
+	    <TextView
+	    	android:id="@+id/portfolioTextMS"  
+	    	android:layout_height="34dp" 
+	    	android:layout_width="fill_parent"
+	    	android:textSize="15px" >
+	    </TextView>
+	    
+	    <!-- Smith & Nephew -->
+	    <TextView 
+	    	android:id="@+id/textView4" 
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="140dp" 
+	    	android:text="Smith &amp; Nephew">
+	    </TextView>
+	    
+	    <TextView
+	    	android:id="@+id/portfolioTextSN"
+	    	android:layout_height="35dp" 
+	    	android:layout_width="fill_parent" 
+	    	android:textSize="16px"  >
+	    </TextView>
+	    
+	    <TableRow	    
+	    	android:id="@+id/tableRow7" 
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="39dp">
+	    	
+	        <TextView 
+	        	android:id="@+id/textView7" 
+	        	android:layout_height="wrap_content" 
+	        	android:layout_width="wrap_content" 
+	        	android:text="Grand Total"
+	        	android:textAppearance="?android:attr/textAppearanceMedium">
+	        </TextView>
+	        
+	        <TextView
+	        	android:id="@+id/textGT" 
+	        	android:layout_height="34dp"
+	        	android:layout_width="105px"
+	        	android:textSize="15px">
+	        </TextView>
+	    </TableRow>
+			
+		<LinearLayout 
+		    android:gravity="center_vertical"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:orientation="horizontal"
+		    android:weightSum="1">
+		</LinearLayout>	
+	</LinearLayout>
+</ScrollView>
