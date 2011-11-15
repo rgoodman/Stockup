@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
 
@@ -42,25 +42,21 @@ public class Main extends Activity
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
 	{
+		super.onCreate(savedInstanceState);
 		if (HaveNetworkConnection())
 		{
 			createPortfolio();
-			super.onCreate(savedInstanceState);
+			
 			setContentView(R.layout.menu);
 			((Button) findViewById(R.id.btnPortfolio)).setOnClickListener(portfolioPageListener);
 			((Button) findViewById(R.id.btnStatus)).setOnClickListener(statusPageListener);
 		}
 		else
 		{
-			Context context = getApplicationContext();
-			CharSequence text = "You have no internet connection!";
-			int duration = Toast.LENGTH_SHORT;
-
-			Toast toast = Toast.makeText(context, text, duration);
-			toast.show();
-		}
+			
+			loadPage(Status.class);
 	}
-
+	}
 	/*
 	 * Loads a page
 	 */
@@ -82,21 +78,18 @@ public class Main extends Activity
 	
 	private boolean HaveNetworkConnection()
 	{
-	    boolean HaveConnectedWifi = false;
-	    boolean HaveConnectedMobile = false;
-
-	    ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 	    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
 	    for (NetworkInfo ni : netInfo)
 	    {
 	        if (ni.getTypeName().equalsIgnoreCase("WIFI"))
 	            if (ni.isConnected())
-	                HaveConnectedWifi = true;
+	                return true;
 	        if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
 	            if (ni.isConnected())
-	                HaveConnectedMobile = true;
+	                return true;
 	    }
-	    return HaveConnectedWifi || HaveConnectedMobile;
+	    return false;
 	}
 
 }
