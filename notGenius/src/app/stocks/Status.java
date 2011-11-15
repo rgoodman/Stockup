@@ -45,21 +45,17 @@ public class Status extends Activity
 		while(iterator.hasNext())
 		{
 			mySet = iterator.next();
-			fieldID = (TextView)findViewById(mySet.getStatusFieldID());
-			reader = new WebReader(mySet.getStockURL());
-			input = reader.readLine();
-			currentPrice = reader.getCurrentPrice(input);
-			openPrice = reader.getOpenPrice(input);
-			difference = Math.abs(openPrice - currentPrice);
-			percentage = String.format("%.2f", 100/(openPrice/difference));
+			readData();
+			getDetails();
+			calculate();
 			
-			if(currentPrice >= openPrice)
+			if(ccurrentPrice >= openPrice*1.1)
 			{
 				color = (int) Color.GREEN;
 				shareDirection = "rocketed";
 			}
 			
-			else if(currentPrice <= openPrice)
+			else if(openPrice*0.2 + currentPrice <= openPrice)
 			{
 				color = (int) Color.RED;
 				shareDirection = "plummeted";
@@ -68,5 +64,29 @@ public class Status extends Activity
 			fieldID.setText(mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%");
 			fieldID.setTextColor(color);
 		}
+		
+		
+		public void calculate()
+		{
+		difference = Math.abs(openPrice - currentPrice);
+		percentage = String.format("%.2f", 100/(openPrice/difference));
+		
+		}
+	
+		public void getDetails()
+		{
+			currentPrice = reader.getCurrentPrice(input);
+			openPrice = reader.getOpenPrice(input);
+		
+		}
+	
+		
+		public void readData()
+		{
+			fieldID = (TextView)findViewById(mySet.getStatusFieldID());
+			reader = new WebReader(mySet.getStockURL());
+			input = reader.readLine();
+		}
+	
 	}
 }
