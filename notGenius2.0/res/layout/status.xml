@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:gravity="center_vertical" 
+    android:layout_width="fill_parent"
+	android:orientation="vertical" 
+	android:layout_height="wrap_content">
+    
+    <LinearLayout
+	    android:layout_height="fill_parent"
+	    android:layout_width="fill_parent">
+	    
+	    <TableRow	    
+    		android:background="@drawable/topbar"
+	    	android:id="@+id/tableRow7" 
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="36dp">
+    		
+	    	<!-- Page Title -->
+    		<TextView
+    			android:gravity="center_horizontal"
+    			android:id="@+id/textView1"
+    			android:layout_width="fill_parent"
+    			android:paddingTop="4dp"
+    			android:text="@string/status" 
+    			android:textSize="18px"
+    			android:textStyle="bold">
+   			</TextView>
+		</TableRow>
+	</LinearLayout>
+    
+    <!-- Connection Status -->
+    <TextView 
+    	android:gravity="center_horizontal|center_vertical"
+    	android:id="@+id/connectionStatus" 
+    	android:layout_height="48dp"
+    	android:layout_width="fill_parent"
+    	android:text="@string/internet"
+    	android:textSize="20px"
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- Change Status -->
+    <TextView 
+    	android:gravity="center_vertical"
+    	android:id="@+id/changeStatus" 
+    	android:layout_height="wrap_content"
+    	android:layout_width="fill_parent"
+    	android:textSize="18px"
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- Bowleven -->
+    <TextView 
+    	android:gravity="center_vertical"
+    	android:id="@+id/statusTextBLVN" 
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="2dp"
+    	android:layout_width="fill_parent"
+    	android:textStyle="bold" 
+    	android:textSize="18px" >
+    </TextView>
+    
+    <!-- BP Amoco -->
+    <TextView 
+    	android:gravity="center_vertical"
+    	android:id="@+id/statusTextBP"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="2dp"
+    	android:layout_width="fill_parent"
+    	android:textSize="18px" 
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- HSBC -->
+    <TextView 
+    	android:gravity="center_vertical"
+		android:id="@+id/statusTextHSBC"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="2dp"
+		android:layout_width="fill_parent"
+		android:textSize="18px" 
+		android:textStyle="bold" >
+	</TextView>
+	
+	<!-- Experian -->
+    <TextView  
+    	android:gravity="center_vertical"
+    	android:id="@+id/statusTextEXPN"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="2dp"
+    	android:layout_width="fill_parent"
+    	android:textStyle="bold" 
+    	android:textSize="18px" >
+    </TextView>
+    
+    <!-- Marks & Spencers -->
+    <TextView 
+    	android:gravity="center_vertical"
+    	android:id="@+id/statusTextMS" 
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="2dp"
+    	android:layout_width="fill_parent"
+    	android:textSize="18px" 
+    	android:textStyle="bold">
+    </TextView>
+    
+    <!-- Smith & Nephew-->
+    <TextView 
+    	android:gravity="center_vertical"
+    	android:id="@+id/statusTextSN"
+    	android:layout_height="wrap_content"
+    	android:layout_marginBottom="2dp"
+    	android:layout_width="fill_parent"
+    	android:textStyle="bold" 
+    	android:textSize="18px" >
+    </TextView>
+</LinearLayout>
+
