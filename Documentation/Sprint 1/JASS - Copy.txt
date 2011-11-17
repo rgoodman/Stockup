@@ -1,0 +1,34 @@
+CREATE DATABASE Jass'Stocks
+
+CREATE TABLE ShareDetails
+(
+
+ShareCode nchar(20) NOT NULL PRIMARY KEY UNIQUE,
+NameOfShare varchar(255) NOT NULL UNIQUE
+ 
+)
+
+CREATE TABLE Portfolio
+(
+
+ ShareCode nchar(20) FOREIGN KEY REFERENCES ShareDetails(ShareCode),
+ SharesOwned INT NOT NULL DEFAULT ((0))
+ 
+)
+
+CREATE TABLE ShareValues
+(
+
+ ShareCode nchar(20) FOREIGN KEY REFERENCES ShareDetails(ShareCode),
+ MonMornValue FLOAT(24) NOT NULL,
+ TUeMornValue FLOAT(24) NOT NULL,
+ WedMornValue FLOAT(24) NOT NULL,
+ ThurMornValue FLOAT(24) NOT NULL,
+ FriMornValue FLOAT(24) NOT NULL,
+ MonEveValue FLOAT(24) NOT NULL,
+ TueEveValue FLOAT(24) NOT NULL,
+ WedEveValue FLOAT(24) NOT NULL,
+ ThurEveValue FLOAT(24) NOT NULL,
+ FriEveValue FLOAT(24) NOT NULL
+ 
+)
