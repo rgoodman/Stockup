@@ -42,7 +42,7 @@ public class Portfolio extends Activity
 	View view;
 	ImageView imageView;
 	
-	private String pattern = "###,###,###,###";
+	private String pattern = "£###,###,###,###";
 	
 	
 	OnClickListener refreshPortfolioListener = new OnClickListener()
