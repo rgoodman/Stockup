@@ -1,10 +1,9 @@
 package app.stockup;
 
 import java.math.BigDecimal;
-import java.text.NumberFormat;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Locale;
 
 import app.stockup.Main;
 import app.stockup.ShareSet;
@@ -43,6 +42,8 @@ public class Portfolio extends Activity
 	View view;
 	ImageView imageView;
 	
+	private String pattern = "###,###,###,###";
+	
 	
 	OnClickListener refreshPortfolioListener = new OnClickListener()
 	{
@@ -52,6 +53,10 @@ public class Portfolio extends Activity
 		}
 	};
 	
+	/**
+	 * onCreate
+	 * 
+	 */
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
@@ -61,11 +66,21 @@ public class Portfolio extends Activity
 		getConnectionStatus();		
 	}
 	
+	/**
+	 * onResume
+	 * 
+	 * @param savedInstanceState
+	 */
 	public void onResume(Bundle savedInstanceState)
 	{	
 		getConnectionStatus();
 	}
 	
+	
+	/**
+	 * getConnectionStatus
+	 * 
+	 */
 	private void getConnectionStatus()
 	{
 		if (hasConnection() == true)
@@ -79,6 +94,12 @@ public class Portfolio extends Activity
 		}	
 	}
 	
+	/**
+	 * hasConnection
+	 * 
+	 * Checks if there is an internet connection available.
+	 * @return true if an internet connection is available, false otherwise.
+	 */
 	private boolean hasConnection()
 	{
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -117,6 +138,15 @@ public class Portfolio extends Activity
 		GT.setText(formatCurrency(grandTotal/100));
 	}
 	
+	
+	/**
+	 * setAlertStyle
+	 * 
+	 * @param field
+	 * @param text
+	 * @param fieldColor
+	 * @param icon
+	 */
 	private void setAlertStyle(TextView field, String text, int fieldColor, int icon)
 	{
 		imageView = null;
@@ -139,16 +169,22 @@ public class Portfolio extends Activity
 		imageView.setBackgroundDrawable(this.getResources().getDrawable(icon));
 	}
 	
+	/**
+	 * formatCurrency
+	 * 
+	 * @param value
+	 * @return
+	 */
 	private String formatCurrency(double value)
 	{
 		BigDecimal myDecimal = new BigDecimal(value);
 		myDecimal.setScale(0, BigDecimal.ROUND_DOWN);
 		
-	    NumberFormat myFormat = NumberFormat.getCurrencyInstance(Locale.UK);
+		DecimalFormat myFormat = new DecimalFormat(pattern);
 	    String output = myFormat.format(myDecimal);
 	    return output;
 	}
-}
+} // end class Portfolio
 
 
 
