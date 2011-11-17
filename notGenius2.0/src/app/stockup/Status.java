@@ -30,7 +30,7 @@ public class Status extends Activity
 	boolean change;
 
 	int color;
-	int icon;
+	int counter = 0;
 	WebReader reader;
 
 	float currentPrice;
@@ -103,37 +103,29 @@ public class Status extends Activity
 			else
 			{	
 				change = false;
+				color = (int) Color.WHITE;
 				
 				calculatePercentage();
 	
 				if (currentPrice == 0 || openPrice == 0)
 				{
-					change = true;
-					color = (int)R.drawable.alert_amber;
-					icon = (int)R.drawable.alert_amber_icon;
 					shareDirection = "has invalid data";
+					change = true;
 				}
 	
 				else if(currentPrice >= openPrice*1.1f)
 				{
-					change = true;
-					color = (int)R.drawable.alert_green;
-					icon = (int)R.drawable.arrow_up_icon;
+					color = R.color.green;
 					shareDirection = "rocketed";
+					change = true;
 				}
 				
 				else if(openPrice*0.2 + currentPrice <= openPrice)
 				{
-					change = true;
-					color = (int)R.drawable.alert_red;
-					icon = (int)R.drawable.arrow_down_icon;
+					color = R.color.red;
 					shareDirection = "plummeted";
+					change = true;
 				}
-
-				//color = (int)R.drawable.alert_green;
-				//icon = (int)R.drawable.arrow_up_icon;
-				//shareDirection = "rocketed";
-				//displayDetails();
 				
 				if(change)
 				{
@@ -142,27 +134,27 @@ public class Status extends Activity
 			}
 		}
 		
-		if(change)
+		if(!change)
 		{
 			setAlertStyle(changeStatus, "No rockets or plummets!", R.drawable.alert_amber, R.drawable.alert_amber_icon);
 		}
 	}
 
-	/*
-	 * 
-	 */
 	public void displayDetails()
 	{
-		setAlertStyle(fieldID, (mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%"), color, icon);
+		fieldID.setBackgroundResource(color);
+		fieldID.setHeight(36);
+		fieldID.setText(mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%");
+		fieldID.setTextColor(Color.WHITE);
 	}
 	
 	private void setAlertStyle(TextView field, String text, int fieldColor, int icon)
 	{
 		imageView = null;
+		field.setVisibility(View.VISIBLE);
 		field.setText(text);
 		
 		parent = (TableRow) field.getParent();
-		parent.setVisibility(View.VISIBLE);
 		parent.setBackgroundDrawable(this.getResources().getDrawable(fieldColor));
 		
 		for (int itemPos = 0; itemPos < parent.getChildCount(); itemPos++)
@@ -178,24 +170,21 @@ public class Status extends Activity
 		imageView.setBackgroundDrawable(this.getResources().getDrawable(icon));
 	}
 
-	/*
-	 * 
-	 */
 	public void calculatePercentage()
 	{
 		difference = Math.abs(openPrice - currentPrice);
 		percentage = String.format("%.2f", 100/(openPrice/difference));
 	}
 
-	/*
-	 *
-	 */
 	public boolean getMarketValues()
 	{
 		try
 		{
-			currentPrice = (float)reader.getCurrentPrice(input);
-			openPrice = (float)reader.getOpenPrice(input);
+			currentPrice = (float)reader.getCurrentPrice(counter);
+			//currentPrice = (float)reader.getCurrentPrice(input);
+			openPrice = (float)reader.getOpenPrice(counter);
+			counter++;
+			//openPrice = (float)reader.getOpenPrice(input);
 			return true;
 		}
 		catch(Exception e)
@@ -204,9 +193,6 @@ public class Status extends Activity
 		}
 	}
 	
-	/*
-	 * 
-	 */
 	public void readData()
 	{
 		fieldID = (TextView)findViewById(mySet.getStatusFieldID());

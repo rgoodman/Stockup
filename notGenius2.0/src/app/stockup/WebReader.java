@@ -71,4 +71,19 @@ public class WebReader
 		price = input.substring(from + 1, to);
 		return Double.parseDouble(price);
 	}
+	
+	public double getCurrentPrice(int counter)
+	{
+		double[] currentPrices = {600, 500, 400, 300, 200, 100};
+		//double currentPrice = 10;
+		return currentPrices[counter];
+	}
+	
+	public double getOpenPrice(int counter)
+	{
+		double[] openPrices = {100, 200, 300, 400, 500, 600};
+		//double openPrice = 5;
+		//double openPrice = 20;
+		return openPrices[counter];
+	}
 }

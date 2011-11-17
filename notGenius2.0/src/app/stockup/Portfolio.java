@@ -32,6 +32,8 @@ public class Portfolio extends Activity
 
 	WebReader reader;
 	
+	int counter = 0;
+	
 	double sharePrice;	
 	
 	float grandTotal;
@@ -106,7 +108,9 @@ public class Portfolio extends Activity
 			fieldID = (TextView)findViewById(mySet.getPortfolioFieldID());
 			reader = new WebReader(mySet.getStockURL());
 			input = reader.readLine();
-			sharePrice = reader.getCurrentPrice(input);
+			//sharePrice = reader.getCurrentPrice(input);
+			sharePrice = reader.getCurrentPrice(counter);
+			counter++;
 			shareSetTotal = (float)(sharePrice * mySet.getQuantity());
 			grandTotal += shareSetTotal;
 			total = formatCurrency((shareSetTotal/100));

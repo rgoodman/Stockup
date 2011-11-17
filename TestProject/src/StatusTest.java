@@ -9,21 +9,21 @@ public class StatusTest extends TestCase {
 	 * 
 	 */
 	public void testOpenPriceInvalid (){
-		assertEquals("has invalid data", st.compareSharePrice(0,80));
+		assertEquals("has invalid data", st.compareSharePrice(0,1));
 		}
 	
 	/*
 	 * 
 	 */
 	public void testCurrentPriceInvalid() {
-		assertEquals("has invalid data", st.compareSharePrice(100,0));
+		assertEquals("has invalid data", st.compareSharePrice(3,-1));
 		}
 	
 	/*
 	 * 
 	 */
 	public void testBothValidNoEvent() {
-		assertEquals(null, st.compareSharePrice(100,99));
+		assertEquals(null, st.compareSharePrice(50,50));
 		}
 	
 	/*
