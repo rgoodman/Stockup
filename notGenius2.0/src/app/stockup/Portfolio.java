@@ -115,6 +115,10 @@ public class Portfolio extends Activity
 	    return false;
 	}
 	
+	/**
+	 * refreshPortfolioPage
+	 * 
+	 */
 	public void refreshPortfolioPage()
 	{
 		grandTotal = 0;		
@@ -123,7 +127,6 @@ public class Portfolio extends Activity
 		
 		while(iterator.hasNext())
 		{
-			//ihygkuyg
 			mySet = iterator.next();
 			fieldID = (TextView)findViewById(mySet.getPortfolioFieldID());
 			reader = new WebReader(mySet.getStockURL());
