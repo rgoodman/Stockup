@@ -30,6 +30,7 @@ public class Status extends Activity
 	boolean change;
 
 	int color;
+	int icon;
 	WebReader reader;
 
 	float currentPrice;
@@ -102,42 +103,46 @@ public class Status extends Activity
 			else
 			{	
 				change = false;
-				color = (int) Color.WHITE;
 				
 				calculatePercentage();
 	
 				if (currentPrice == 0 || openPrice == 0)
 				{
-					shareDirection = "has invalid data";
 					change = true;
+					color = (int)R.drawable.alert_amber;
+					icon = (int)R.drawable.alert_amber_icon;
+					shareDirection = "has invalid data";
 				}
 	
 				else if(currentPrice >= openPrice*1.1f)
 				{
-					color = R.color.green;
-					shareDirection = "rocketed";
 					change = true;
+					color = (int)R.drawable.alert_green;
+					icon = (int)R.drawable.arrow_up_icon;
+					shareDirection = "rocketed";
 				}
 				
 				else if(openPrice*0.2 + currentPrice <= openPrice)
 				{
-					color = R.color.red;
-					shareDirection = "plummeted";
 					change = true;
+					color = (int)R.drawable.alert_red;
+					icon = (int)R.drawable.arrow_down_icon;
+					shareDirection = "plummeted";
 				}
-				
-				color = R.color.red;
-				shareDirection = "plummeted";
-				displayDetails();
+
+				//color = (int)R.drawable.alert_green;
+				//icon = (int)R.drawable.arrow_up_icon;
+				//shareDirection = "rocketed";
+				//displayDetails();
 				
 				if(change)
 				{
-					//displayDetails();				
+					displayDetails();				
 				}
 			}
 		}
 		
-		if(!change)
+		if(change)
 		{
 			setAlertStyle(changeStatus, "No rockets or plummets!", R.drawable.alert_amber, R.drawable.alert_amber_icon);
 		}
@@ -148,19 +153,16 @@ public class Status extends Activity
 	 */
 	public void displayDetails()
 	{
-		fieldID.setBackgroundResource(color);
-		fieldID.setHeight(36);
-		fieldID.setText(mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%");
-		fieldID.setTextColor(Color.WHITE);
+		setAlertStyle(fieldID, (mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%"), color, icon);
 	}
 	
 	private void setAlertStyle(TextView field, String text, int fieldColor, int icon)
 	{
 		imageView = null;
-		field.setVisibility(View.VISIBLE);
 		field.setText(text);
 		
 		parent = (TableRow) field.getParent();
+		parent.setVisibility(View.VISIBLE);
 		parent.setBackgroundDrawable(this.getResources().getDrawable(fieldColor));
 		
 		for (int itemPos = 0; itemPos < parent.getChildCount(); itemPos++)

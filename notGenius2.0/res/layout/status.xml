@@ -37,7 +37,8 @@
     	android:layout_marginTop="10dp"
     	android:layout_marginRight="4dp"
     	android:layout_marginLeft="4dp"
-	    android:layout_width="fill_parent">
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
     
 	    <ImageView
 	    	android:gravity="center_vertical"
@@ -56,8 +57,7 @@
 	    	android:paddingBottom="6dp"
 	    	android:textColor="@color/white"
 	    	android:textSize="18px"
-	    	android:textStyle="bold"
-	    	android:visibility="gone">
+	    	android:textStyle="bold">
 	    </TextView>
 	 </TableRow>
     
@@ -68,7 +68,8 @@
     	android:layout_marginTop="10dp"
     	android:layout_marginRight="4dp"
     	android:layout_marginLeft="4dp"
-	    android:layout_width="fill_parent">
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
     
 	    <ImageView
 	    	android:gravity="center_vertical"
@@ -88,75 +89,207 @@
 	    	android:paddingBottom="6dp"
 	    	android:textColor="@color/white"
 	    	android:textSize="18px"
-	    	android:textStyle="bold"
-	    	android:visibility="gone">
+	    	android:textStyle="bold">
 	    </TextView>
     </TableRow>
     
+    
     <!-- Bowleven -->
-    <TextView 
-    	android:gravity="center_vertical"
-    	android:id="@+id/statusTextBLVN" 
-    	android:layout_height="wrap_content"
-    	android:layout_marginBottom="2dp"
-    	android:layout_width="fill_parent"
-    	android:textStyle="bold" 
-    	android:textSize="18px" >
-    </TextView>
+    <TableRow	   
+	    android:id="@+id/tableRow43" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
     
-    <!-- BP Amoco -->
-    <TextView 
-    	android:gravity="center_vertical"
-    	android:id="@+id/statusTextBP"
-    	android:layout_height="wrap_content"
-    	android:layout_marginBottom="2dp"
-    	android:layout_width="fill_parent"
-    	android:textSize="18px" 
-    	android:textStyle="bold">
-    </TextView>
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:gravity="center_vertical"
+	    	android:id="@+id/statusTextBLVN" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="2dp"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:layout_width="fill_parent"
+	    	android:textColor="@color/white"
+	    	android:textStyle="bold" 
+	    	android:textSize="16px" >
+	    </TextView>
+	</TableRow>
+	
+	<!-- BP Amoco -->
+    <TableRow	   
+	    android:id="@+id/tableRow48" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
     
-    <!-- HSBC -->
-    <TextView 
-    	android:gravity="center_vertical"
-		android:id="@+id/statusTextHSBC"
-    	android:layout_height="wrap_content"
-    	android:layout_marginBottom="2dp"
-		android:layout_width="fill_parent"
-		android:textSize="18px" 
-		android:textStyle="bold" >
-	</TextView>
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:gravity="center_vertical"
+	    	android:id="@+id/statusTextBP" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="2dp"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:layout_width="fill_parent"
+	    	android:textColor="@color/white"
+	    	android:textStyle="bold" 
+	    	android:textSize="16px" >
+	    </TextView>
+	</TableRow>
 	
 	<!-- Experian -->
-    <TextView  
-    	android:gravity="center_vertical"
-    	android:id="@+id/statusTextEXPN"
-    	android:layout_height="wrap_content"
-    	android:layout_marginBottom="2dp"
-    	android:layout_width="fill_parent"
-    	android:textStyle="bold" 
-    	android:textSize="18px" >
-    </TextView>
+    <TableRow	   
+	    android:id="@+id/tableRow46" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
     
-    <!-- Marks & Spencers -->
-    <TextView 
-    	android:gravity="center_vertical"
-    	android:id="@+id/statusTextMS" 
-    	android:layout_height="wrap_content"
-    	android:layout_marginBottom="2dp"
-    	android:layout_width="fill_parent"
-    	android:textSize="18px" 
-    	android:textStyle="bold">
-    </TextView>
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:gravity="center_vertical"
+	    	android:id="@+id/statusTextEXPN" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="2dp"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:layout_width="fill_parent"
+	    	android:textColor="@color/white"
+	    	android:textStyle="bold" 
+	    	android:textSize="16px" >
+	    </TextView>
+	</TableRow>
+	
+	<!-- HSBC -->
+    <TableRow	   
+	    android:id="@+id/tableRow44" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
     
-    <!-- Smith & Nephew-->
-    <TextView 
-    	android:gravity="center_vertical"
-    	android:id="@+id/statusTextSN"
-    	android:layout_height="wrap_content"
-    	android:layout_marginBottom="2dp"
-    	android:layout_width="fill_parent"
-    	android:textStyle="bold" 
-    	android:textSize="18px" >
-    </TextView>
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:gravity="center_vertical"
+	    	android:id="@+id/statusTextHSBC" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="2dp"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:layout_width="fill_parent"
+	    	android:textColor="@color/white"
+	    	android:textStyle="bold" 
+	    	android:textSize="16px" >
+	    </TextView>
+	</TableRow>
+	
+	<!-- Marks & Spencers -->
+    <TableRow	   
+	    android:id="@+id/tableRow64" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
+    
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:gravity="center_vertical"
+	    	android:id="@+id/statusTextMS" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="2dp"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:layout_width="fill_parent"
+	    	android:textColor="@color/white"
+	    	android:textStyle="bold" 
+	    	android:textSize="16px" >
+	    </TextView>
+	</TableRow>
+	
+	<!-- Smith & Nephew -->
+    <TableRow	   
+	    android:id="@+id/tableRow454" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent"
+	    android:visibility="gone">
+    
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:gravity="center_vertical"
+	    	android:id="@+id/statusTextSN" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_marginBottom="2dp"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:layout_width="fill_parent"
+	    	android:textColor="@color/white"
+	    	android:textStyle="bold" 
+	    	android:textSize="16px" >
+	    </TextView>
+	</TableRow>
 </LinearLayout>
 
