@@ -1,7 +1,10 @@
 package app.stocks;
 
 import android.app.Activity;
+import android.content.Context;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,7 +23,7 @@ public class Portfolio extends Activity
 	Iterator<ShareSet> iterator = myShares.iterator();
 	ShareSet mySet;
 
-	TextView GT, fieldID;
+	TextView connectionStatus, GT, fieldID;
 
 	WebReader reader;
 	
@@ -45,7 +48,16 @@ public class Portfolio extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.portfolio);
 		((ImageView) findViewById(R.id.refresh)).setOnClickListener(refreshPortfolioListener);
-		refreshPortfolioPage();
+		connectionStatus = (TextView)findViewById(R.id.textStat);
+
+		if (HaveNetworkConnection() == true)
+		{
+			refreshPortfolioPage();
+		}
+		else
+		{
+			connectionStatus.setText("Internet : Not Connected");		
+		}
 	}
 
 	/*
@@ -80,6 +92,22 @@ public class Portfolio extends Activity
 	    NumberFormat myFormat = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
 	    String output = myFormat.format(myDecimal);
 	    return output;
+	}
+	
+	private boolean HaveNetworkConnection()
+	{
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+	    for (NetworkInfo ni : netInfo)
+	    {
+	        if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+	            if (ni.isConnected())
+	                return true;
+	        if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+	            if (ni.isConnected())
+	                return true;
+	    }
+	    return false;
 	}
 }
 

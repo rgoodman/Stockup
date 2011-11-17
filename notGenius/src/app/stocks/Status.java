@@ -40,15 +40,16 @@ public class Status extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.status);
 		connectionStatus = (TextView)findViewById(R.id.textStat); 
-		connectionStatus = (TextView)findViewById(R.id.textStat); 
-		if ( HaveNetworkConnection() == true)
+		if (HaveNetworkConnection() == true)
 		{
-			connectionStatus.setText("Internet : Connected");
 			compareSharePrice();
+			connectionStatus.setText("Internet : Connected");		
+
 		}
 		else
-		connectionStatus.setText("Internet : Not Connected");
-		
+		{
+			connectionStatus.setText("Internet : Not Connected");		
+		}
 	}
 
 	/*

@@ -22,6 +22,17 @@
 	    	android:src="@drawable/refresh">
 	    </ImageView>
 	    
+	    <!-- Connection Status -->
+	    <TextView 
+	    	android:id="@+id/connectionStatus" 
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="70dp" 
+	    	android:text="@string/inter" 
+	    	android:textAppearance="?android:attr/textAppearanceLarge"  
+	    	android:textSize="20px"
+	    	android:textStyle="bold">
+	    </TextView>
+	    
 	    <!-- Bowleven -->
 	    <TextView
 	    	android:id="@+id/textView1"
