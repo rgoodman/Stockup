@@ -14,6 +14,9 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class Status extends Activity
@@ -37,6 +40,10 @@ public class Status extends Activity
 	String percentage;
 	String shareDirection;
 	
+	TableRow parent;
+	View view;
+	ImageView imageView;
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -56,12 +63,12 @@ public class Status extends Activity
 	{
 		if (hasConnection() == true)
 		{
-			connectionStatus.setText("Connection Established");
+			setAlertStyle(connectionStatus, "Connection Established", R.drawable.alert_green, R.drawable.alert_green_icon);
 			compareSharePrice();
 		}
 		else
 		{
-			connectionStatus.setText("No Internet Access");
+			setAlertStyle(connectionStatus, "No Internet Access", R.drawable.alert_red, R.drawable.alert_red_icon);
 		}	
 	}
 	
@@ -89,7 +96,7 @@ public class Status extends Activity
 			
 			if(!getMarketValues())
 			{
-				connectionStatus.setText("Unable to retrieve data!");
+				setAlertStyle(connectionStatus, "Unable to retrieve data!", R.drawable.alert_amber, R.drawable.alert_amber_icon);
 			}
 			
 			else
@@ -119,19 +126,20 @@ public class Status extends Activity
 					change = true;
 				}
 				
+				color = R.color.red;
+				shareDirection = "plummeted";
+				displayDetails();
+				
 				if(change)
 				{
-					displayDetails();				
+					//displayDetails();				
 				}
 			}
 		}
 		
 		if(!change)
 		{
-			changeStatus.setBackgroundResource(R.color.amber);
-			changeStatus.setHeight(36);
-			changeStatus.setText("No recent changes");
-			changeStatus.setTextColor(Color.WHITE);
+			setAlertStyle(changeStatus, "No rockets or plummets!", R.drawable.alert_amber, R.drawable.alert_amber_icon);
 		}
 	}
 
@@ -145,6 +153,28 @@ public class Status extends Activity
 		fieldID.setText(mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%");
 		fieldID.setTextColor(Color.WHITE);
 	}
+	
+	private void setAlertStyle(TextView field, String text, int fieldColor, int icon)
+	{
+		imageView = null;
+		field.setVisibility(View.VISIBLE);
+		field.setText(text);
+		
+		parent = (TableRow) field.getParent();
+		parent.setBackgroundDrawable(this.getResources().getDrawable(fieldColor));
+		
+		for (int itemPos = 0; itemPos < parent.getChildCount(); itemPos++)
+		{
+		    view = parent.getChildAt(itemPos);
+		    if (view instanceof ImageView)
+		    {
+		    	imageView = (ImageView) view;
+		        break;
+		    }
+		}
+		
+		imageView.setBackgroundDrawable(this.getResources().getDrawable(icon));
+	}
 
 	/*
 	 * 
@@ -154,7 +184,6 @@ public class Status extends Activity
 		difference = Math.abs(openPrice - currentPrice);
 		percentage = String.format("%.2f", 100/(openPrice/difference));
 	}
-
 
 	/*
 	 *
@@ -172,6 +201,7 @@ public class Status extends Activity
 			return false;
 		}
 	}
+	
 	/*
 	 * 
 	 */

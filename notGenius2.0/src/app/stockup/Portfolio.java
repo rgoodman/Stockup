@@ -12,10 +12,14 @@ import app.stockup.WebReader;
 import app.stockup.R;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class Portfolio extends Activity
@@ -24,7 +28,7 @@ public class Portfolio extends Activity
 	Iterator<ShareSet> iterator = myShares.iterator();
 	ShareSet mySet;
 
-	TextView GT, fieldID;
+	TextView changeStatus, connectionStatus, fieldID, GT;
 
 	WebReader reader;
 	
@@ -35,6 +39,11 @@ public class Portfolio extends Activity
 
 	String input;
 	String total;
+	
+	TableRow parent;
+	View view;
+	ImageView imageView;
+	
 	
 	OnClickListener refreshPortfolioListener = new OnClickListener()
 	{
@@ -49,7 +58,41 @@ public class Portfolio extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.portfolio);
 		((ImageView) findViewById(R.id.refresh)).setOnClickListener(refreshPortfolioListener);
-		refreshPortfolioPage();
+		connectionStatus = (TextView)findViewById(R.id.connectionStatus);
+		getConnectionStatus();		
+	}
+	
+	public void onResume(Bundle savedInstanceState)
+	{	
+		getConnectionStatus();
+	}
+	
+	private void getConnectionStatus()
+	{
+		if (hasConnection() == true)
+		{
+			setAlertStyle(connectionStatus, "Connection Established", R.drawable.alert_green, R.drawable.alert_green_icon);
+			refreshPortfolioPage();
+		}
+		else
+		{
+			setAlertStyle(connectionStatus, "No Internet Access", R.drawable.alert_red, R.drawable.alert_red_icon);
+		}	
+	}
+	
+	private boolean hasConnection()
+	{
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+	    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+
+	    for (NetworkInfo ni : netInfo)
+	    {
+	        if ((ni.getTypeName().equalsIgnoreCase("WIFI") || ni.getTypeName().equalsIgnoreCase("MOBILE")) && ni.isConnected())
+	        {
+	        	return true;
+	        }
+	    }
+	    return false;
 	}
 	
 	public void refreshPortfolioPage()
@@ -71,6 +114,28 @@ public class Portfolio extends Activity
 		}
 		
 		GT.setText(formatCurrency(grandTotal/100));
+	}
+	
+	private void setAlertStyle(TextView field, String text, int fieldColor, int icon)
+	{
+		imageView = null;
+		field.setVisibility(View.VISIBLE);
+		field.setText(text);
+		
+		parent = (TableRow) field.getParent();
+		parent.setBackgroundDrawable(this.getResources().getDrawable(fieldColor));
+		
+		for (int itemPos = 0; itemPos < parent.getChildCount(); itemPos++)
+		{
+		    view = parent.getChildAt(itemPos);
+		    if (view instanceof ImageView)
+		    {
+		    	imageView = (ImageView) view;
+		        break;
+		    }
+		}
+		
+		imageView.setBackgroundDrawable(this.getResources().getDrawable(icon));
 	}
 	
 	private String formatCurrency(double value)

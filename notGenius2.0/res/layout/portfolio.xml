@@ -30,6 +30,37 @@
 	    </ImageView>
 	</TableRow>
 	
+	<!-- Connection Status -->
+    <TableRow
+	    android:id="@+id/tableRow87" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent">
+    
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:id="@+id/connectionStatus"
+			android:layout_height="wrap_content"
+	    	android:layout_width="fill_parent"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:textColor="@color/white"
+	    	android:textSize="18px"
+	    	android:textStyle="bold"
+	    	android:visibility="gone">
+	    </TextView>
+	 </TableRow>
+	
 	<ScrollView
 		android:layout_height="wrap_content"
 		android:layout_width="fill_parent">

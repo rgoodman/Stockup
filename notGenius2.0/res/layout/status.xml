@@ -3,9 +3,9 @@
 <LinearLayout 
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:gravity="center_vertical" 
+	android:layout_height="wrap_content"
     android:layout_width="fill_parent"
-	android:orientation="vertical" 
-	android:layout_height="wrap_content">
+	android:orientation="vertical">
     
     <LinearLayout
 	    android:layout_height="fill_parent"
@@ -31,25 +31,67 @@
 	</LinearLayout>
     
     <!-- Connection Status -->
-    <TextView 
-    	android:gravity="center_horizontal|center_vertical"
-    	android:id="@+id/connectionStatus" 
-    	android:layout_height="48dp"
-    	android:layout_width="fill_parent"
-    	android:text="@string/internet"
-    	android:textSize="20px"
-    	android:textStyle="bold">
-    </TextView>
+    <TableRow
+	    android:id="@+id/tableRow5" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent">
     
-    <!-- Change Status -->
-    <TextView 
-    	android:gravity="center_vertical"
-    	android:id="@+id/changeStatus" 
-    	android:layout_height="wrap_content"
-    	android:layout_width="fill_parent"
-    	android:textSize="18px"
-    	android:textStyle="bold">
-    </TextView>
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:id="@+id/connectionStatus"
+			android:layout_height="wrap_content"
+	    	android:layout_width="fill_parent"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:textColor="@color/white"
+	    	android:textSize="18px"
+	    	android:textStyle="bold"
+	    	android:visibility="gone">
+	    </TextView>
+	 </TableRow>
+    
+     <!-- Change Status -->
+     <TableRow	   
+	    android:id="@+id/tableRow53" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent">
+    
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+    	
+	    <TextView 
+	    	android:gravity="center_vertical"
+	    	android:id="@+id/changeStatus" 
+	    	android:layout_height="wrap_content"
+	    	android:layout_width="fill_parent"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:textColor="@color/white"
+	    	android:textSize="18px"
+	    	android:textStyle="bold"
+	    	android:visibility="gone">
+	    </TextView>
+    </TableRow>
     
     <!-- Bowleven -->
     <TextView 
