@@ -25,14 +25,11 @@ import android.widget.TextView;
 public class Portfolio extends Activity
 {
 	public ArrayList<ShareSet> myShares = Main.sharePortfolio;	
-	Iterator<ShareSet> iterator = myShares.iterator();
 	ShareSet mySet;
 
 	TextView changeStatus, connectionStatus, fieldID, GT;
 
 	WebReader reader;
-	
-	int counter = 0;
 	
 	double sharePrice;	
 	
@@ -101,16 +98,16 @@ public class Portfolio extends Activity
 	{
 		grandTotal = 0;		
 		GT = (TextView)findViewById(R.id.textGT);
+		Iterator<ShareSet> iterator = myShares.iterator();
 		
 		while(iterator.hasNext())
 		{
+			//ihygkuyg
 			mySet = iterator.next();
 			fieldID = (TextView)findViewById(mySet.getPortfolioFieldID());
 			reader = new WebReader(mySet.getStockURL());
 			input = reader.readLine();
-			//sharePrice = reader.getCurrentPrice(input);
-			sharePrice = reader.getCurrentPrice(counter);
-			counter++;
+			sharePrice = reader.getCurrentPrice(input);
 			shareSetTotal = (float)(sharePrice * mySet.getQuantity());
 			grandTotal += shareSetTotal;
 			total = formatCurrency((shareSetTotal/100));

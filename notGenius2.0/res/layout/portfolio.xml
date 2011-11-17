@@ -10,24 +10,28 @@
     	android:background="@drawable/topbar"
 	    android:layout_width="fill_parent"
 	    android:layout_height="36dp">
+  		
+  		<!-- Refresh Button -->
+	    <ImageView
+	    	android:layout_weight="0"
+	    	android:id="@+id/refresh"
+	    	android:layout_height="fill_parent"
+	    	android:layout_marginLeft="6dp"
+	    	android:layout_marginTop="-1dp"
+	    	android:layout_width="wrap_content"	    	
+	    	android:src="@drawable/refresh">
+	    </ImageView>
     		
    		<TextView
    			android:gravity="center_horizontal"
+   			android:layout_marginLeft="-24dp"
+	    	android:layout_weight="1"
    			android:layout_width="fill_parent"
    			android:paddingTop="6dp"
    			android:text="@string/portfolio" 
    			android:textSize="16px"
     		android:textStyle="bold">
   		</TextView>
-  		
-  		<!-- Refresh Button -->
-	    <ImageView
-	    	android:layout_weight="1"
-	    	android:id="@+id/refresh"
-	    	android:layout_height="wrap_content"
-	    	android:layout_width="wrap_content"
-	    	android:src="@drawable/refresh">
-	    </ImageView>
 	</TableRow>
 	
 	<!-- Connection Status -->
@@ -77,7 +81,7 @@
 			     
 			    <TextView
 			        android:id="@+id/portfolioTextBLVN"
-			        android:layout_height="36dp"
+			        android:layout_height="wrap_content"
 			        android:layout_width="fill_parent"
 			        android:textSize="16px">
 			    </TextView>
@@ -91,7 +95,7 @@
 			    
 			    <TextView 
 			    	android:id="@+id/portfolioTextBP"
-			    	android:layout_height="36dp"
+			    	android:layout_height="wrap_content"
 			    	android:layout_width="fill_parent"
 			    	android:textSize="16px">
 			    </TextView>
@@ -105,7 +109,7 @@
 			    
 			    <TextView 
 			    	android:id="@+id/portfolioTextEXPN"
-			    	android:layout_height="36dp"
+			    	android:layout_height="wrap_content"
 			    	android:layout_width="fill_parent"
 			    	android:textSize="16px">
 			    </TextView>
@@ -119,7 +123,7 @@
 			    
 			    <TextView 
 			    	android:id="@+id/portfolioTextHSBC" 
-			    	android:layout_height="36dp"
+			    	android:layout_height="wrap_content"
 			    	android:layout_width="fill_parent" 
 			    	android:textSize="16px"  >
 			    </TextView>
@@ -133,7 +137,7 @@
 			    
 			    <TextView
 			    	android:id="@+id/portfolioTextMS"  
-			    	android:layout_height="36dp" 
+			    	android:layout_height="wrap_content" 
 			    	android:layout_width="fill_parent"
 			    	android:textSize="15px" >
 			    </TextView>
@@ -147,7 +151,7 @@
 			    
 			    <TextView
 			    	android:id="@+id/portfolioTextSN"
-			    	android:layout_height="36dp" 
+			    	android:layout_height="wrap_content" 
 			    	android:layout_width="fill_parent" 
 			    	android:textSize="16px">
 			    </TextView>
@@ -155,7 +159,7 @@
 	    		<TableRow	    
 	    			android:id="@+id/tableRow7" 
 	    			android:layout_width="fill_parent"
-	    			android:layout_height="39dp">
+	    			android:layout_height="wrap_content">
 	    	
 	       			<TextView 
 	        			android:id="@+id/textView7" 

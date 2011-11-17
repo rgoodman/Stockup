@@ -33,7 +33,7 @@ public class Main extends TabActivity
 		
 		//setTabColour();
 		
-		tabHost.setCurrentTab(0);
+		tabHost.setCurrentTab(1);
 	}
 	
 	public void setTabColour()
