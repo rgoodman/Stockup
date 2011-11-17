@@ -73,109 +73,128 @@
 	    	android:layout_width="fill_parent"
 	    	android:layout_height="wrap_content">
 	    	
-	     		<TextView
-			    	android:layout_height="wrap_content"
-			    	android:layout_width="wrap_content"
-			    	android:text="Bowleven">
-			    </TextView>
+	    	<TableRow
+	   			android:id="@+id/tableRow575237" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent">
 			     
 			    <TextView
 			        android:id="@+id/portfolioTextBLVN"
 			        android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
 			        android:layout_width="fill_parent"
-			        android:textSize="16px">
+			        android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
 			    </TextView>
+			</TableRow>
 			
-			    <TextView 
-			    	android:id="@+id/textView2"
-			    	android:layout_width="wrap_content"
-			    	android:layout_height="wrap_content"
-			    	android:text="BP Amoco">
-			    </TextView>
-			    
+		    <TableRow
+	   			android:id="@+id/tableRow57237" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
+	    		
 			    <TextView 
 			    	android:id="@+id/portfolioTextBP"
 			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
 			    	android:layout_width="fill_parent"
-			    	android:textSize="16px">
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
 			    </TextView>
-			 
-			    <TextView 
-			    	android:id="@+id/textView3"
-			    	android:layout_height="wrap_content"
-			    	android:layout_width="wrap_content"
-			    	android:text="Experian">
-			    </TextView>
+			</TableRow>
+			
+			<TableRow
+	   			android:id="@+id/tableRow57257" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 			 
 			    
 			    <TextView 
 			    	android:id="@+id/portfolioTextEXPN"
 			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
 			    	android:layout_width="fill_parent"
-			    	android:textSize="16px">
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
 			    </TextView>
-					    
-			    <TextView 
-			    	android:id="@+id/textView4"
-			    	android:layout_height="wrap_content"
-			    	android:layout_width="140dp"
-			    	android:text="HSBC">
-			    </TextView>
+			</TableRow>
+			
+		    <TableRow
+	   			android:id="@+id/tableRow5727" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
 			    
 			    <TextView 
 			    	android:id="@+id/portfolioTextHSBC" 
 			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
 			    	android:layout_width="fill_parent" 
-			    	android:textSize="16px"  >
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
 			    </TextView>
-						    
-			    <TextView 
-			    	android:id="@+id/textView5" 
-			    	android:layout_height="wrap_content" 
-			    	android:layout_width="wrap_content" 
-			    	android:text="Marks &amp; Spencers">
-			    </TextView>
+			</TableRow>
+			
+		    <TableRow
+	   			android:id="@+id/tableRow577" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
 			    
 			    <TextView
 			    	android:id="@+id/portfolioTextMS"  
-			    	android:layout_height="wrap_content" 
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp" 
 			    	android:layout_width="fill_parent"
-			    	android:textSize="15px" >
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
 			    </TextView>
+			</TableRow>
 			
-				<TextView 
-			    	android:id="@+id/textView4" 
-			    	android:layout_height="wrap_content" 
-			    	android:layout_width="40dp" 
-			    	android:text="Smith &amp; Nephew">
-			    </TextView>
+			<TableRow
+	   			android:id="@+id/tableRow54257" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
 			    
 			    <TextView
 			    	android:id="@+id/portfolioTextSN"
-			    	android:layout_height="wrap_content" 
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
 			    	android:layout_width="fill_parent" 
-			    	android:textSize="16px">
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
 			    </TextView>
-			    
-	    		<TableRow	    
-	    			android:id="@+id/tableRow7" 
-	    			android:layout_width="fill_parent"
-	    			android:layout_height="wrap_content">
-	    	
-	       			<TextView 
-	        			android:id="@+id/textView7" 
-	        			android:layout_height="wrap_content" 
-	        			android:layout_width="wrap_content" 
-	        			android:text="Grand Total"
-	        			android:textAppearance="?android:attr/textAppearanceMedium">
-	        		</TextView>
-	        
-	        		<TextView
-	        			android:id="@+id/textGT" 
-	        			android:layout_height="34dp"
-	        			android:layout_width="105px"
-	        			android:textSize="15px">
-	        		</TextView>
-	    		</TableRow>
+			</TableRow>
+        
+        		<TextView
+        		android:gravity="center_horizontal"
+        			android:id="@+id/textGT" 
+        			android:layout_height="wrap_content"
+        			android:layout_width="fill_parent"
+    				android:textColor="@color/white"
+        			android:textSize="18px">
+        		</TextView>
 		</TableLayout>
 	</ScrollView>
 </LinearLayout>

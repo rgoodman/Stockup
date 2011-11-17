@@ -135,10 +135,10 @@ public class Portfolio extends Activity
 			shareSetTotal = (float)(sharePrice * mySet.getQuantity());
 			grandTotal += shareSetTotal;
 			total = formatCurrency((shareSetTotal/100));
-			fieldID.setText(String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   " + total);
+			fieldID.setText(mySet.getCompanyName() + "\n" + String.valueOf(sharePrice) + "    x    " + mySet.getQuantity() + " shares " + "   =   " + total);
 		}
 		
-		GT.setText(formatCurrency(grandTotal/100));
+		GT.setText("Grand Total : \t" + formatCurrency(grandTotal/100));
 	}
 	
 	
