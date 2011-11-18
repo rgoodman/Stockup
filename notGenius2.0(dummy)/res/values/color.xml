@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+	<color name="white">#ffffff</color>
+	<color name="black">#0a0a0a</color>
+	
+	<color name="grey">#f2f2f2</color>
+	<color name="greyBorder">#fafafa</color>
+	
+	<color name="amber">#f77b01</color>
+	<color name="amberBorder">#FF7E00</color>
+	
+	<color name="red">#f00000</color>
+	<color name="redBorder">#ff0000</color>
+	
+	<color name="green">#2dba01</color>
+	<color name="greenBorder">#2fc700</color>
+</resources>

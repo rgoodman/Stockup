@@ -13,8 +13,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Locale;
-import java.text.NumberFormat;
+import java.text.DecimalFormat;
 import java.math.*;
 
 public class Portfolio extends Activity
@@ -34,6 +33,8 @@ public class Portfolio extends Activity
 
 	String input;
 	String total;
+	
+	private String pattern = "£###,###,###,###"; //The String pattern used for formatting the display of currency.
 
 	OnClickListener refreshPortfolioListener = new OnClickListener()
 	{
@@ -48,7 +49,7 @@ public class Portfolio extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.portfolio);
 		((ImageView) findViewById(R.id.refresh)).setOnClickListener(refreshPortfolioListener);
-		connectionStatus = (TextView)findViewById(R.id.textStat);
+		connectionStatus = (TextView)findViewById(R.id.connectionStatus);
 
 		if (HaveNetworkConnection() == true)
 		{
@@ -60,7 +61,7 @@ public class Portfolio extends Activity
 		}
 	}
 
-	/*
+	/**
 	 * Refreshes all Portfolio values
 	 */
 	public void refreshPortfolioPage()
@@ -84,15 +85,24 @@ public class Portfolio extends Activity
 		GT.setText(formatCurrency(grandTotal/100));
 	}
 	
+	/**
+	 * formatCurrency
+	 * 
+	 * Returns a formatted String representing the currency value of shares.
+	 *  
+	 * @param value a double representing the currency value to be formatted.
+	 * @return output the String containing the formatted currency.
+	 */
 	private String formatCurrency(double value)
 	{
 		BigDecimal myDecimal = new BigDecimal(value);
 		myDecimal.setScale(0, BigDecimal.ROUND_DOWN);
 		
-	    NumberFormat myFormat = NumberFormat.getCurrencyInstance(Locale.ENGLISH);
+		DecimalFormat myFormat = new DecimalFormat(pattern);
 	    String output = myFormat.format(myDecimal);
 	    return output;
-	}
+	} // end method formatCurrency
+	
 	
 	private boolean HaveNetworkConnection()
 	{

@@ -42,7 +42,7 @@ public class Portfolio extends Activity
 	View view;
 	ImageView imageView;
 	
-	private String pattern = "£###,###,###,###";
+	private String pattern = "£###,###,###,###"; //The String pattern used for formatting the display of currency.
 	
 	
 	OnClickListener refreshPortfolioListener = new OnClickListener()
@@ -56,6 +56,7 @@ public class Portfolio extends Activity
 	/**
 	 * onCreate
 	 * 
+	 * @param savedInstanceState
 	 */
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -80,6 +81,7 @@ public class Portfolio extends Activity
 	/**
 	 * getConnectionStatus
 	 * 
+	 * Indicates and Sets the status of the Internet Connection. 
 	 */
 	private void getConnectionStatus()
 	{
@@ -92,12 +94,14 @@ public class Portfolio extends Activity
 		{
 			setAlertStyle(connectionStatus, "No Internet Access", R.drawable.alert_red, R.drawable.alert_red_icon);
 		}	
-	}
+	} // end method getConnectionStatus
+	
 	
 	/**
 	 * hasConnection
 	 * 
 	 * Checks if there is an internet connection available.
+	 * 
 	 * @return true if an internet connection is available, false otherwise.
 	 */
 	private boolean hasConnection()
@@ -113,10 +117,13 @@ public class Portfolio extends Activity
 	        }
 	    }
 	    return false;
-	}
+	} // end method hasConnection
+	
 	
 	/**
 	 * refreshPortfolioPage
+	 * 
+	 * Updates the ShareSet information displayed on the portfolio page.
 	 * 
 	 */
 	public void refreshPortfolioPage()
@@ -139,16 +146,18 @@ public class Portfolio extends Activity
 		}
 		
 		GT.setText("Grand Total : \t" + formatCurrency(grandTotal/100));
-	}
+	} // end method refreshPortfolioPage
 	
 	
 	/**
 	 * setAlertStyle
 	 * 
-	 * @param field
-	 * @param text
-	 * @param fieldColor
-	 * @param icon
+	 * Sets up an AlertStyle for the specified TextView. 
+	 * 
+	 * @param field The TextView whose properties are to be set to the specified values.
+	 * @param text Sets this TextViews setText to the specified text.
+	 * @param fieldColor Sets this TextViews Colour to the one specified.
+	 * @param icon Sets the Icon this TextView will display.
 	 */
 	private void setAlertStyle(TextView field, String text, int fieldColor, int icon)
 	{
@@ -170,13 +179,16 @@ public class Portfolio extends Activity
 		}
 		
 		imageView.setBackgroundDrawable(this.getResources().getDrawable(icon));
-	}
+	} // end method setAlertStyle
+	
 	
 	/**
 	 * formatCurrency
 	 * 
-	 * @param value
-	 * @return
+	 * Returns a formatted String representing the currency value of shares.
+	 *  
+	 * @param value a double representing the currency value to be formatted.
+	 * @return output the String containing the formatted currency.
 	 */
 	private String formatCurrency(double value)
 	{
@@ -186,7 +198,7 @@ public class Portfolio extends Activity
 		DecimalFormat myFormat = new DecimalFormat(pattern);
 	    String output = myFormat.format(myDecimal);
 	    return output;
-	}
+	} // end method formatCurrency
 } // end class Portfolio
 
 

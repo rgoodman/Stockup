@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">StockUp</string>
+    <string name="hello">Hello World, Main!</string>
+    <string name="BP">BP Amoco</string>
+    <string name="HSBC">HSBC</string>
+    <string name="EXP">Experian</string>
+    <string name="ms">Marks and Spencer</string>
+    <string name="SN">Smith and Nephew</string>
+    <string name="SP">Share Price</string>
+    <string name="tot">TOTAL</string>
+    <string name="gt">Grand Total</string> 
+    <string name="t">Total</string>
+    <string name="bw">Bowleven</string> 
+    <string name="status">Status</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="internet">Connection Status:</string>
+</resources>

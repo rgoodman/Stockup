@@ -10,7 +10,6 @@ import app.stockup.R;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -45,6 +44,11 @@ public class Status extends Activity
 	View view;
 	ImageView imageView;
 	
+	/**
+	 * onCreate
+	 * 
+	 * @param savedInstanceState
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -55,11 +59,23 @@ public class Status extends Activity
 		getConnectionStatus();		
 	}
 	
+	
+	/**
+	 * onResume
+	 * 
+	 * @param savedInstanceState
+	 */
 	public void onResume(Bundle savedInstanceState)
 	{	
 		getConnectionStatus();
 	}
 	
+	
+	/**
+	 * getConnectionStatus
+	 * 
+	 * Indicates and Sets the status of the Internet Connection. 
+	 */
 	private void getConnectionStatus()
 	{
 		if (hasConnection() == true)
@@ -73,6 +89,14 @@ public class Status extends Activity
 		}	
 	}
 	
+	
+	/**
+	 * hasConnection
+	 * 
+	 * Checks if there is an internet connection available.
+	 * 
+	 * @return true if an internet connection is available, false otherwise.
+	 */
 	private boolean hasConnection()
 	{
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -88,6 +112,12 @@ public class Status extends Activity
 	    return false;
 	}
 	
+	
+	/**
+	 * compareSharePrice
+	 * 
+	 * Compares Share Prices to check if any Rockets or Plummets have occured.
+	 */
 	public void compareSharePrice()
 	{		
 		while(iterator.hasNext())
@@ -129,15 +159,10 @@ public class Status extends Activity
 					icon = (int)R.drawable.arrow_down_icon;
 					shareDirection = "plummeted";
 				}
-
-				//color = (int)R.drawable.alert_green;
-				//icon = (int)R.drawable.arrow_up_icon;
-				//shareDirection = "rocketed";
-				//displayDetails();
 				
 				if(change)
 				{
-					displayDetails();				
+					displayShareSetDetails();				
 				}
 			}
 		}
@@ -146,16 +171,30 @@ public class Status extends Activity
 		{
 			setAlertStyle(changeStatus, "No rockets or plummets!", R.drawable.alert_amber, R.drawable.alert_amber_icon);
 		}
-	}
+	} // end method compareSharePrice
 
-	/*
+	
+	/**
+	 * displayShareSetDetails
 	 * 
+	 * Displays the details of a ShareSet on screen.
 	 */
-	public void displayDetails()
+	public void displayShareSetDetails()
 	{
 		setAlertStyle(fieldID, (mySet.getStockCode() + " has " + shareDirection + " by " + percentage + "%"), color, icon);
 	}
 	
+	
+	/**
+	 * setAlertStyle
+	 * 
+	 * Sets up an AlertStyle for the specified TextView. 
+	 * 
+	 * @param field The TextView whose properties are to be set to the specified values.
+	 * @param text Sets this TextViews setText to the specified text.
+	 * @param fieldColor Sets this TextViews Colour to the one specified.
+	 * @param icon Sets the Icon this TextView will display.
+	 */
 	private void setAlertStyle(TextView field, String text, int fieldColor, int icon)
 	{
 		imageView = null;
@@ -178,17 +217,25 @@ public class Status extends Activity
 		imageView.setBackgroundDrawable(this.getResources().getDrawable(icon));
 	}
 
-	/*
+
+	/**
+	 * calculatePercentage
 	 * 
+	 * Calculates the percentage difference between the current and open market values.
 	 */
 	public void calculatePercentage()
 	{
 		difference = Math.abs(openPrice - currentPrice);
 		percentage = String.format("%.2f", 100/(openPrice/difference));
 	}
-
-	/*
-	 *
+	
+	
+	/**
+	 * getMarketValues
+	 * 
+	 * Reads in the Current and Open price market values.
+	 * 
+	 * @return true if successful, false otherwise.
 	 */
 	public boolean getMarketValues()
 	{
@@ -204,8 +251,11 @@ public class Status extends Activity
 		}
 	}
 	
-	/*
+	
+	/**
+	 * readData
 	 * 
+	 * Reads stock market data from a website. 
 	 */
 	public void readData()
 	{

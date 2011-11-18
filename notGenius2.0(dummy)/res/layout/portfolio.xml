@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:orientation="vertical">
+    
+	<TableRow	    
+    	android:background="@drawable/topbar"
+	    android:layout_width="fill_parent"
+	    android:layout_height="36dp">
+  		
+  		<!-- Refresh Button -->
+	    <ImageView
+	    	android:layout_weight="0"
+	    	android:id="@+id/refresh"
+	    	android:layout_height="fill_parent"
+	    	android:layout_marginLeft="6dp"
+	    	android:layout_marginTop="-1dp"
+	    	android:layout_width="wrap_content"	    	
+	    	android:src="@drawable/refresh">
+	    </ImageView>
+    		
+   		<TextView
+   			android:gravity="center_horizontal"
+   			android:layout_marginLeft="-24dp"
+	    	android:layout_weight="1"
+   			android:layout_width="fill_parent"
+   			android:paddingTop="6dp"
+   			android:text="@string/portfolio" 
+   			android:textSize="16px"
+    		android:textStyle="bold">
+  		</TextView>
+	</TableRow>
+	
+	<!-- Connection Status -->
+    <TableRow
+	    android:id="@+id/tableRow87" 
+	    android:layout_height="wrap_content"
+    	android:layout_marginTop="10dp"
+    	android:layout_marginRight="4dp"
+    	android:layout_marginLeft="4dp"
+	    android:layout_width="fill_parent">
+    
+	    <ImageView
+	    	android:gravity="center_vertical"
+	    	android:layout_height="24dp"
+	    	android:layout_marginTop="7dp"
+	    	android:layout_marginLeft="10dp"
+	    	android:layout_marginRight="12dp"
+	    	android:layout_width="24dp">
+	    </ImageView>
+	    
+	    <TextView 
+	    	android:id="@+id/connectionStatus"
+			android:layout_height="wrap_content"
+	    	android:layout_width="fill_parent"
+	    	android:paddingTop="6dp"
+	    	android:paddingBottom="6dp"
+	    	android:textColor="@color/white"
+	    	android:textSize="18px"
+	    	android:textStyle="bold"
+	    	android:visibility="gone">
+	    </TextView>
+	 </TableRow>
+	
+	<ScrollView
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent">
+		
+        <TableLayout
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content">
+	    	
+	    	<TableRow
+	   			android:id="@+id/tableRow575237" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent">
+			     
+			    <TextView
+			        android:id="@+id/portfolioTextBLVN"
+			        android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
+			        android:layout_width="fill_parent"
+			        android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
+			    </TextView>
+			</TableRow>
+			
+		    <TableRow
+	   			android:id="@+id/tableRow57237" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
+	    		
+			    <TextView 
+			    	android:id="@+id/portfolioTextBP"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
+			    	android:layout_width="fill_parent"
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
+			    </TextView>
+			</TableRow>
+			
+			<TableRow
+	   			android:id="@+id/tableRow57257" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 			 
+			    
+			    <TextView 
+			    	android:id="@+id/portfolioTextEXPN"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
+			    	android:layout_width="fill_parent"
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
+			    </TextView>
+			</TableRow>
+			
+		    <TableRow
+	   			android:id="@+id/tableRow5727" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
+			    
+			    <TextView 
+			    	android:id="@+id/portfolioTextHSBC" 
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
+			    	android:layout_width="fill_parent" 
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
+			    </TextView>
+			</TableRow>
+			
+		    <TableRow
+	   			android:id="@+id/tableRow577" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
+			    
+			    <TextView
+			    	android:id="@+id/portfolioTextMS"  
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp" 
+			    	android:layout_width="fill_parent"
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
+			    </TextView>
+			</TableRow>
+			
+			<TableRow
+	   			android:id="@+id/tableRow54257" 
+			    android:background="@drawable/grey_box"
+			    android:layout_marginTop="8dp"
+			    android:layout_marginLeft="4dp"
+			    android:layout_marginRight="4dp"
+	    		android:layout_width="fill_parent"> 
+			    
+			    <TextView
+			    	android:id="@+id/portfolioTextSN"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginLeft="8dp"
+			    	android:layout_width="fill_parent" 
+			    	android:textSize="15px"
+	    			android:textColor="@color/black"
+    				android:textStyle="bold">
+			    </TextView>
+			</TableRow>
+        
+        		<TextView
+        		android:gravity="center_horizontal"
+        			android:id="@+id/textGT" 
+        			android:layout_height="wrap_content"
+        			android:layout_width="fill_parent"
+    				android:textColor="@color/white"
+        			android:textSize="18px">
+        		</TextView>
+		</TableLayout>
+	</ScrollView>
+</LinearLayout>
